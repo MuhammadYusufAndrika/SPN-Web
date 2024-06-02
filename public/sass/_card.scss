@@ -1,0 +1,87 @@
+/* card body */
+.card {
+  border-radius: 2em !important;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  text-align: left;
+  width: calc(50% - 10px);
+  margin: 20px;
+  background-color: #ffffff;
+  margin-bottom: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease-in-out !important;
+}
+
+/* card hover */
+.card:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 5px 5px 10px #727272;
+}
+
+/* image card */
+.card-img-top {
+  text-align: left;
+  background-color: #ffffff;
+}
+
+.card-text {
+  font-size: 30px;
+  font-weight: bold;
+  color: #0073ff; 
+}
+
+.card-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 7px;
+  color: #333;
+}
+
+.card-subtitle {
+  font-size: 15px;
+  margin-bottom: 7px;
+  color: #555;
+}
+
+/* card button */
+.btn.btn-primary {
+  border-radius: 2em;
+  background-color: #0073ff;
+  color: #fff; 
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.card-body {
+  background-color: #ffffff;
+}
+
+.card-info {
+  font-size: 14px;
+  color: #888;
+  margin-top: 7px;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 75vh;
+}
+
+.accordion {
+  margin-bottom: 80px !important;
+}
+
+
+.accordion-item {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#rate {
+  margin-top: 200px;
+}
+
+.div.accordion{
+  margin-bottom: 50px;
+}

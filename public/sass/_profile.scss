@@ -1,0 +1,74 @@
+.col-md-3 {
+  margin-top: 0px;
+}
+
+.user-profile .d-flex {
+  display: flex;
+  margin: 0 auto;
+  align-self: center;
+  max-width: 1300px;
+  height: 85vh;
+}
+
+
+.sidebar-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 5px;
+  margin: 30px;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+
+.heading-profile {
+  margin: 40px;
+}
+
+.heading-profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+}
+
+.menu-sidebar-profile {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 350px;
+  margin-left: 20px;
+}
+
+.menu-sidebar-profile .list {
+  padding: 10px;
+  text-decoration: none;
+}
+
+
+.button-logout {
+  border-radius: 2em;
+  background-color: #0073ff;
+  color: #fff; 
+  font-size: 14px;
+  text-decoration: none;
+  align-self: center;
+}
+
+.container-page-fluid {
+  margin: 50px;
+}
+
+.content-profile {
+  margin-top: 20px;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+  overflow: hidden;
+}
+
+#resetpasswordview {
+  max-height: 300px;
+  overflow-y: auto !important;
+}
+
+.section-page{
+  margin-bottom: 400px;
+}

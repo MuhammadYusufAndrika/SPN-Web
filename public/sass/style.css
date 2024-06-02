@@ -1,0 +1,608 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.kartu {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-size: cover;
+  background-position: center;
+}
+
+/*Pilih Paketmu*/
+.pilih-paket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.pilih-paket h5,
+.pilih-paket h1 {
+  margin: 0;
+}
+
+section {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Style content */
+h1,
+h2,
+p {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.carousel-inner .carousel-caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
+.carousel-inner .carousel-caption h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.navbar {
+  background-color: #fff;
+  height: 55px;
+  margin: 20px;
+  border-radius: 16px;
+  padding: 0.5rem;
+}
+
+.nav-item {
+  padding-inline: 20px;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.dropdown-item {
+  font-weight: 500;
+  font-size: 17px;
+}
+
+/* card body */
+.card {
+  border-radius: 2em !important;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  text-align: left;
+  width: calc(50% - 10px);
+  margin: 20px;
+  background-color: #ffffff;
+  margin-bottom: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease-in-out !important;
+}
+
+/* card hover */
+.card:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 5px 5px 10px #727272;
+}
+
+/* image card */
+.card-img-top {
+  text-align: left;
+  background-color: #ffffff;
+}
+
+.card-text {
+  font-size: 30px;
+  font-weight: bold;
+  color: #0073ff;
+}
+
+.card-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 7px;
+  color: #333;
+}
+
+.card-subtitle {
+  font-size: 15px;
+  margin-bottom: 7px;
+  color: #555;
+}
+
+/* card button */
+.btn.btn-primary {
+  border-radius: 2em;
+  background-color: #0073ff;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.card-body {
+  background-color: #ffffff;
+}
+
+.card-info {
+  font-size: 14px;
+  color: #888;
+  margin-top: 7px;
+}
+
+.carousel-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  width: 100%;
+  height: 75vh;
+}
+
+.accordion {
+  margin-bottom: 80px !important;
+}
+
+.accordion-item {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#rate {
+  margin-top: 200px;
+}
+
+.div.accordion {
+  margin-bottom: 50px;
+}
+
+.kotak1 {
+  background: #2b08c9;
+  color: white;
+  height: 300px;
+  padding-top: 100px;
+  padding-left: 135px;
+  padding-bottom: 80px;
+}
+
+.judul {
+  text-align: left;
+  padding-left: 450px;
+  margin-top: 35px;
+  font-size: 46px;
+}
+
+.peta-col-md6-row {
+  margin-left: 0%;
+}
+
+.peta {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  justify-content: left;
+  padding-left: 135px;
+  padding-right: 130px;
+  display: flex;
+  text-align: left;
+  padding-bottom: 80px;
+  padding-top: 80px;
+}
+
+.kantor {
+  color: black;
+}
+
+.kami {
+  color: orange;
+}
+
+.tombolkirim {
+  padding-left: 60px;
+}
+
+.textinfo {
+  padding-left: 60px;
+  padding-bottom: 10px;
+}
+
+.reporttext {
+  padding-left: 60px;
+}
+
+.paragrafopas {
+  opacity: 75%;
+  color: white;
+}
+
+.reportbox {
+  background-color: azure;
+}
+
+.penutup {
+  padding-top: 80px;
+}
+
+.about {
+  text-align: center;
+  color: white;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  margin-top: 10px;
+}
+
+.margin-top {
+  margin-top: 10px;
+}
+
+.block1 {
+  height: 300px;
+  background-color: green;
+  border: 5px solid #f0f0f0;
+}
+
+.empty-block {
+  height: 150px;
+}
+
+.block2 {
+  height: 300px;
+  background-color: red;
+  border: 5px solid #f0f0f0;
+}
+
+.block-contain {
+  height: 620px;
+}
+
+about.row_margin-top.col-sm-4_block1 {
+  height: 100px;
+}
+
+.modal-content {
+  border-radius: 1.5em !important;
+}
+
+.btn.btn-secondary {
+  border-radius: 2em;
+}
+
+.col-md-3 {
+  margin-top: 0px;
+}
+
+.user-profile .d-flex {
+  display: flex;
+  margin: 0 auto;
+  align-self: center;
+  max-width: 1300px;
+  height: 85vh;
+}
+
+.sidebar-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 5px;
+  margin: 30px;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+
+.heading-profile {
+  margin: 40px;
+}
+
+.heading-profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+}
+
+.menu-sidebar-profile {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 350px;
+  margin-left: 20px;
+}
+
+.menu-sidebar-profile .list {
+  padding: 10px;
+  text-decoration: none;
+}
+
+.button-logout {
+  border-radius: 2em;
+  background-color: #0073ff;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  align-self: center;
+}
+
+.container-page-fluid {
+  margin: 50px;
+}
+
+.content-profile {
+  margin-top: 20px;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+  overflow: hidden;
+}
+
+#resetpasswordview {
+  max-height: 300px;
+  overflow-y: auto !important;
+}
+
+.section-page {
+  margin-bottom: 400px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.login-form {
+  background-image: url("/assets/images/backregisterbaru.webp");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* tampilan body */
+body {
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+/* gradasi body */
+body::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: -1;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: center;
+}
+
+/* kartu dalam wadah */
+.container .card-login {
+  padding: 100px 40px;
+  position: center;
+  z-index: 4;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.082); /* latar belakang dengan keburaman */
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px); /* efek blur dengan backdrop filter */
+  border-radius: 30px;
+}
+
+.container .card-login h1 {
+  text-align: center;
+  color: cyan;
+  font-weight: 400;
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form .input-group {
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  flex-direction: column;
+  color: white;
+}
+
+form .input-group input {
+  border: none;
+  background-color: white;
+  border-radius: 6px;
+  padding: 9px;
+}
+
+form .btn-group {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+form .btn-group .btn {
+  padding: 9px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+form .btn-group .btn-login {
+  background-color: #1253b4;
+}
+
+form .btn-group .sosmed {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+form .btn-group .sosmed a {
+  text-align: center;
+  color: white;
+  font-size: 23px;
+  position: relative;
+  transition: 0.3s;
+}
+
+form .btn-group .sosmed::before {
+  content: "";
+  display: flex;
+  top: 50%;
+  position: absolute;
+  height: 1px;
+  width: 40%;
+  left: -50px;
+  background-color: #d4dde2;
+}
+
+form .btn-group .sosmed::after {
+  content: "";
+  display: flex;
+  top: 50%;
+  position: absolute;
+  height: 1px;
+  width: 40%;
+  right: -50px;
+  background-color: #d4dde2;
+}
+
+form .btn-group .sosmed a:hover {
+  color: cyan;
+  transform: scale(1.2);
+}
+
+p {
+  text-align: left;
+  margin-top: 20px;
+}
+
+p a {
+  color: #1f07a8;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fcfcfc;
+}
+
+.Register-form {
+  background-image: url("/assets/images/backregisterbaru.webp");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container-reg {
+  width: 500px;
+  margin-top: center;
+  background-color: rgba(255, 255, 255, 0.082);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(14, 6, 6, 0.1);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  color: cyan;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-group i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.help-text {
+  color: #888;
+  font-size: 14px;
+}
+
+.btn-submit {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #2d5b8d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #1253b4;
+}/*# sourceMappingURL=style.css.map */

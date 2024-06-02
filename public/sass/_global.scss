@@ -1,0 +1,65 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+
+.kartu {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-size: cover;
+  background-position: center;
+}
+
+/*Pilih Paketmu*/
+.pilih-paket {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 100px;
+}
+.pilih-paket h5,
+.pilih-paket h1 {
+  margin: 0;
+}
+
+
+section {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Style content */
+h1,
+h2,
+p {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.carousel-inner .carousel-caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
+.carousel-inner .carousel-caption h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+
