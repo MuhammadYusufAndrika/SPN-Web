@@ -37,7 +37,7 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Layanan</a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="/payment.html">Internet</a>
+                                    <a class="dropdown-item" href="{{ route('internetlayanan') }}">Internet</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="jarkomlayanan.html">Jaringan Komputer</a>
