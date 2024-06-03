@@ -10,3 +10,6 @@ Route::get('/internetlayanan', function () {
     return view('internetlayanan');
 })->name('internetlayanan');
 
+route :: get('/profile', function(){
+    return view('profile');
+});

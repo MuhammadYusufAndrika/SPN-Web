@@ -13,7 +13,7 @@
   </head>
   <body>
     <header>
-      <div>
+      {{-- <div>
         <nav class="navbar navbar-expand-lg fixed-top">
           <div class="container-fluid">
             <a class="navbar-brand me-auto" href="#">
@@ -84,7 +84,7 @@
             </button>
           </div>
         </nav>
-      </div>
+      </div> --}}
     </header>
     
 
