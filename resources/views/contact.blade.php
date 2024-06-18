@@ -13,6 +13,17 @@
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
+  <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/6666c6ec981b6c56477b7f0a/1i00ni3l6';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+  </script>
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand me-auto" href="#">
@@ -129,11 +140,11 @@
       </h2>
     </div>
   <section class="peta">
-    <div class="card w-50 p-3" >
+    <!-- <div class="card w-50 p-3" > -->
       <div class="ratio ratio-4x3">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d986.4952580892519!2d116.66311432851101!3d-8.501221973099224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcc393b29ac144d%3A0xb0622dfdcbe4238f!2sJSN%20-%20Kantor%20Layanan%20Labuhan%20Lombok!5e0!3m2!1sid!2sid!4v1715173013393!5m2!1sid!2sid" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
-    </div> 
+    <!-- </div>  -->
       <div class="reportbox col-md-6">
         <h2 class="reporttext text-uppercase mt-3 font-weight-bold text-black">Pengaduan Masalah</h2>
         <form action="">
