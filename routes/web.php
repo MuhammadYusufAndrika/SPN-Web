@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CarouselController;
 use App\Http\Controllers\Admin\DescriptionController;
 use App\Http\Controllers\Admin\ServiceController;
-
+ 
 Route::get('/layouts', function () {
     return view('layouts.admin');
 });

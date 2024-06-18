@@ -60,7 +60,7 @@
   <!-- End Banner -->
 
   <!-- What is Jsn -->
-  <section id="desc  ription">
+  <section id="description">
     <div class="container my-5">
       <div id="Home" class="row align-items-center">
         <div class="col-md-6" data-aos="zoom-in" data-aos-duration="1000">
