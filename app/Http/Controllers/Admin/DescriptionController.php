@@ -47,11 +47,10 @@ class DescriptionController extends Controller
 
         return redirect()->route('admin.descriptions.index')->with('success', 'Description updated successfully.');
     }
-    
+
     public function destroy(Description $description)
     {
         $description->delete();
         return redirect()->route('admin.descriptions.index')->with('success', 'Description deleted successfully.');
     }
 }
-

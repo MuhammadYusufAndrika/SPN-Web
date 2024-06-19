@@ -68,28 +68,10 @@
         </div>
         <div class="col-md-6">
           <h2>
-            <span class="text-primary">Apasih?</span>
-            <span class="text-danger">Surya Prima Net </span>
+            <span class="text-danger">{{ $firstDescription->title }}</span>
           </h2>
           <p>
-            Surya Prima Net adalah perusahaan yang berdedikasi untuk menyediakan layanan internet dan solusi teknologi
-            yang unggul, dengan fokus pada kualitas layanan dan kepuasan pelanggan. Kami percaya bahwa infrastruktur
-            jaringan
-            yang kuat adalah kunci untuk memberikan pengalaman internet yang lancar dan andal. Oleh karena itu, kami
-            terus berinovasi dan mengadopsi teknologi terbaru untuk meningkatkan kapasitas jaringan dan menghadirkan
-            layanan yang
-            efisien. Tim dukungan teknis kami siap membantu pelanggan dengan solusi cepat dan tepat, memastikan bahwa
-            setiap masalah teknis dapat diselesaikan dengan baik.
-          </p>
-          <p>
-            Selain komitmen kami terhadap kualitas layanan, Surya Prima Net juga berperan aktif dalam program
-            komunitas yang bertujuan untuk memperluas akses internet di berbagai wilayah. Kami memahami pentingnya
-            konektivitas dalam era
-            digital saat ini dan ingin memastikan bahwa semua orang memiliki akses ke sumber daya online yang mereka
-            butuhkan. Dengan semangat ini, Kampoeng WiFi hadir sebagai mitra terpercaya, bekerja sama dengan komunitas
-            lokal untuk
-            menyediakan jaringan WiFi yang terjangkau dan dapat diandalkan. Kami bangga menjadi bagian dari upaya
-            untuk menjembatani kesenjangan digital dan memajukan masyarakat melalui teknologi.
+            {{ $firstDescription->content }}
           </p>
         </div>
       </div>

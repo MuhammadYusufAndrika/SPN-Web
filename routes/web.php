@@ -5,14 +5,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CarouselController;
 use App\Http\Controllers\Admin\DescriptionController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LayananInternetController;
 use App\Http\Controllers\PengaduanController;
+
 use App\Models\LayananInternet;
 use App\Models\Pengaduan;
 
-Route::get('/layouts', function () {
-    return view('layouts.admin');
-});
+Route::get('/',[IndexController::class, 'index']);
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('carousels', CarouselController::class);
