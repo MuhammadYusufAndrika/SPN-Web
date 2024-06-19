@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CarouselController;
 use App\Http\Controllers\Admin\DescriptionController;
 use App\Http\Controllers\Admin\ServiceController;
- 
+use App\Http\Controllers\PengaduanController;
+use App\Models\Pengaduan;
+
 Route::get('/layouts', function () {
     return view('layouts.admin');
 });
@@ -14,6 +16,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('carousels', CarouselController::class);
     Route::resource('descriptions', DescriptionController::class);
     Route::resource('services', ServiceController::class);
+    Route::resource('layanan-internet', ServiceController::class);
 });
 
 
@@ -29,3 +32,11 @@ Route::get('/internetlayanan', function () {
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::post('create-contact', [PengaduanController::class, "store"]);
+// Route::resource('layanan-jarkom', [PengaduanController::class, "store"]);
+

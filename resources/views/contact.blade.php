@@ -143,35 +143,37 @@
     <!-- <div class="card w-50 p-3" > -->
       <div class="ratio ratio-4x3">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d986.4952580892519!2d116.66311432851101!3d-8.501221973099224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcc393b29ac144d%3A0xb0622dfdcbe4238f!2sJSN%20-%20Kantor%20Layanan%20Labuhan%20Lombok!5e0!3m2!1sid!2sid!4v1715173013393!5m2!1sid!2sid" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
-    <!-- </div>  -->
+      <!-- </div> -->
+    </div> 
       <div class="reportbox col-md-6">
         <h2 class="reporttext text-uppercase mt-3 font-weight-bold text-black">Pengaduan Masalah</h2>
-        <form action="">
+        <form action="{{ url('create-contact') }}" method="POST" >
+            @csrf
+
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">
-                <input type="text" class="form-control mt-2" placeholder="Nama" required>
+                <input type="text" name="nama" class="form-control mt-2" placeholder="Nama" required>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
-                <input type="text" class="form-control mt-2" placeholder="Email" required>
+                <input type="text" name="email" class="form-control mt-2" placeholder="Email" required>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
-                <input type="email" class="form-control mt-2" placeholder="Alamat" required>
+                <input type="text" name="alamat" class="form-control mt-2" placeholder="Alamat" required>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
-                <input type="text" class="form-control mt-2" placeholder="No. HP" required>
+                <input type="text" name="no_hp" class="form-control mt-2" placeholder="No. HP" required>
               </div>
             </div>
             <div class="col-12">
               <div class="form-group">
-                <textarea class="form-control mt-2" id="exampleFormControlTextarea1" placeholder="Deskribsi Keluhan" rows="3" required></textarea>
+                <textarea name="deskripsi_keluhan" class="form-control mt-2" id="exampleFormControlTextarea1" placeholder="Deskribsi Keluhan" rows="3" required></textarea>
               </div>
             </div>
             <div class="col-12">
@@ -185,7 +187,7 @@
             </div>
             </div>
             <div class=" tombolkirim col-12">
-              <button class="  btn btn-light" type="submit">Kirim</button>
+              <button class="btn btn-light" type="submit">Kirim</button>
             </div>
           </div>
           </form>

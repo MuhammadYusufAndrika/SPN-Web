@@ -29,6 +29,11 @@
                                 Services
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.layanan-internet.index') }}">
+                                Layanan Internet
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
