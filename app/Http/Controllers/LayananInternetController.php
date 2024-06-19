@@ -13,8 +13,8 @@ class LayananInternetController extends Controller
      */
     public function index()
     {
-        $descriptions = LayananInternet::all();
-        return view('admin.layanan-internet.index', $descriptions);
+        // $descriptions = LayananInternet::all();
+        // return view('admin.layanan-internet.index', $descriptions);
     }
 
     /**

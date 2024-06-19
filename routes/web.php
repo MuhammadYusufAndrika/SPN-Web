@@ -21,12 +21,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('layanan-internet', LayananInternetController::class);
 });
 
-
-Route::get('/', function () {
-    return view('index');
-});
-
 Route::get('/internetlayanan', function () {
+    // $descriptions = LayananInternet::all();
     return view('internetlayanan');
 })->name('internetlayanan');
 

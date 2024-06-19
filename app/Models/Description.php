@@ -11,4 +11,6 @@ class Description extends Model
 
     // Menentukan field yang boleh diisi secara massal
     protected $fillable = ['title', 'content'];
+
+    
 }
