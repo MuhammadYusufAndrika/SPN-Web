@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Carousel;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 class CarouselController extends Controller
 {
     public function index()
@@ -27,15 +27,20 @@ class CarouselController extends Controller
             'subtitle' => 'required|string|max:255',
         ]);
 
-        $imagePath = $request->file('image')->store('carousels', 'public');
-
+        // $imagePath = $request->file('image');
+        // $imagePath->storeAs('/public', $imagePath->hashName());
+        // $file = $request->file('image');
+        // echo $imagePath = $request->file('image')->store('images');
+        echo $imagePath = $request->file('image')->storeAs(
+            'images', $request->image->getClientOriginalName());
+        // dd($imagePath);
         Carousel::create([
             'image' => $imagePath,
             'title' => $request->title,
             'subtitle' => $request->subtitle,
         ]);
 
-        return redirect()->route('admin.carousels.index')->with('success', 'Carousel item created successfully.');
+        return redirect()->route('admin.carousels.index')->with('success', 'Carousel item created successfully');
     }
 
     public function edit(Carousel $carousel)
