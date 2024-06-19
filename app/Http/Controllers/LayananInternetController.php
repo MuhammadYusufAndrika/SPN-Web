@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Description;
+use App\Models\LayananInternet;
 use Illuminate\Http\Request;
 
 class LayananInternetController extends Controller
@@ -11,7 +13,8 @@ class LayananInternetController extends Controller
      */
     public function index()
     {
-        //
+        $descriptions = LayananInternet::all();
+        return view('admin.layanan-internet.index', $descriptions);
     }
 
     /**

@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CarouselController;
 use App\Http\Controllers\Admin\DescriptionController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\LayananInternetController;
 use App\Http\Controllers\PengaduanController;
+use App\Models\LayananInternet;
 use App\Models\Pengaduan;
 
 Route::get('/layouts', function () {
@@ -16,7 +18,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('carousels', CarouselController::class);
     Route::resource('descriptions', DescriptionController::class);
     Route::resource('services', ServiceController::class);
-    Route::resource('layanan-internet', ServiceController::class);
+    Route::resource('layanan-internet', LayananInternetController::class);
 });
 
 

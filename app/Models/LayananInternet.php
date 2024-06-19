@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class LayananInternet extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'description',
+        'img',
+    ];
 }
