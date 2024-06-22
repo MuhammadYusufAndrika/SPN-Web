@@ -1,5 +1,4 @@
 @include ('partials.header')
-@extends('layouts.admin')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,20 +8,22 @@
 <body>
     <!-- Banner -->
     <!-- Corrousel About -->
-    
-@section('content')
-    <section>
+    <section class="">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 @foreach ($carousels as $carousel)
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}" aria-current="true" aria-label="Slide {{ $loop->index + 1 }}"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"
+                        aria-current="true" aria-label="Slide {{ $loop->index + 1 }}"></button>
                 @endforeach
             </div>
             <div class="carousel-inner position-relative" style="width: 100%; height: 75vh;">
                 @foreach ($carousels as $carousel)
                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                        <img src="{{ asset('storage/' . $carousel->image) }}" class="d-block w-100" alt="{{ $carousel->title }}">
-                        <div class="position-absolute" style="top: 35%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; padding: 5px;">
+                        <img src="{{ asset('storage/' . $carousel->image) }}" class="d-block w-100"
+                            alt="{{ $carousel->title }}">
+                        <div class="position-absolute"
+                            style="top: 35%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; padding: 5px;">
                             <h1 class="text-light mb-3">
                                 <span class="text-primary">{{ $carousel->title }}</span>
                                 <span class="text-danger">{{ $carousel->subtitle }}</span>
@@ -32,17 +33,18 @@
                     </div>
                 @endforeach
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
     </section>
-@endsection
 
     <!-- End Corrousel About -->
     <!-- End Banner -->
