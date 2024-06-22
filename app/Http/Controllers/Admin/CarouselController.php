@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Carousel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
 class CarouselController extends Controller
 {
     public function index()
@@ -27,13 +28,10 @@ class CarouselController extends Controller
             'subtitle' => 'required|string|max:255',
         ]);
 
-        // $imagePath = $request->file('image');
-        // $imagePath->storeAs('/public', $imagePath->hashName());
-        // $file = $request->file('image');
-        // echo $imagePath = $request->file('image')->store('images');
-        echo $imagePath = $request->file('image')->storeAs(
-            'images', $request->image->getClientOriginalName());
-        // dd($imagePath);
+        // Menyimpan file gambar ke dalam folder 'public/storage/carousels'
+        $imagePath = $request->file('image')->store('carousels', 'public');
+
+        // Menyimpan data ke dalam database
         Carousel::create([
             'image' => $imagePath,
             'title' => $request->title,
@@ -56,13 +54,16 @@ class CarouselController extends Controller
             'subtitle' => 'required|string|max:255',
         ]);
 
+        // Jika ada file gambar baru, kita harus mengupdate jalur file gambar di database
         if ($request->hasFile('image')) {
+            // Menyimpan file gambar baru ke dalam folder 'public/storage/carousels'
             $imagePath = $request->file('image')->store('carousels', 'public');
             $carousel->update([
                 'image' => $imagePath,
             ]);
         }
 
+        // Mengupdate data lainnya
         $carousel->update([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
@@ -77,4 +78,3 @@ class CarouselController extends Controller
         return redirect()->route('admin.carousels.index')->with('success', 'Carousel item deleted successfully.');
     }
 }
-
