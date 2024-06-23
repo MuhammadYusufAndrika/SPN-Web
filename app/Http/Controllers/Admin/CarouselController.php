@@ -74,7 +74,14 @@ class CarouselController extends Controller
 
     public function destroy(Carousel $carousel)
     {
+        // Hapus file gambar dari penyimpanan
+        if (Storage::disk('public')->exists($carousel->image)) {
+            Storage::disk('public')->delete($carousel->image);
+        }
+    
+        // Hapus entri dari database
         $carousel->delete();
+    
         return redirect()->route('admin.carousels.index')->with('success', 'Carousel item deleted successfully.');
     }
 }

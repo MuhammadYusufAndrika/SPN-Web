@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Admin\CarouselController;
 use App\Models\Carousel;
 use App\Models\Description;
-use Illuminate\Http\Request;
+use App\Models\Service;
 
 class IndexController extends Controller
 {
@@ -13,8 +12,9 @@ class IndexController extends Controller
         // Mengambil data untuk title (baris pertama)
         $firstDescription = Description::first();
         $carousels = Carousel::all();
+        $services = Service::all();
 
-        return view('index', compact('firstDescription' , 'carousels'));
+        return view('index', compact('firstDescription' , 'carousels' , 'services'));
         // Mengambil data untuk description (baris kedua)
         // $description = Description::skip(1)->first();
 

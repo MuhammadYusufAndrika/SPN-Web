@@ -139,44 +139,18 @@
         <div class="container my-5">
             <div class="row align-items-center">
                 <div class="col-md-7 order-md-1">
-                    <!-- Order untuk mengatur urutan -->
                     <div>
                         <h3 style="color: #e55c25">Our Services</h3>
-                        <h2 class="text-primary">Internet Services Provider</h2>
-                        <p>
-                            Kami menyediakan akses jaringan ke Internet untuk individu maupun corporate dan layanan
-                            terkait lainnya
-                            seperti akses VPN, membangun situs web dan virtual hosting. Dengan dukungan IP Public, IP
-                            Static, IP
-                            Private, Free Trial
-                            7 hari, SLA 98% dan Support 7x24 jam.
-                        </p>
-                    </div>
-                    <div>
-                        <h2 class="text-primary">Server Data Center</h2>
-                        <p>
-                            Fasilitas yang digunakan untuk menempatkan sistem komputer dan komponen-komponen terkaitnya,
-                            seperti
-                            sistem telekomunikasi dan penyimpanan data. Fasilitas ini biasanya mencakup juga catu daya
-                            redundan atau
-                            cadangan, koneksi
-                            komunikasi data redundan, pengontrol serta piranti keamanan fisik
-                        </p>
-                    </div>
-                    <div>
-                        <h2 class="text-primary">Network Configuration</h2>
-                        <p>
-                            Menggunakan bandwidth seluruhnya dari JSN dan sudah terintergrasi dengan beberapa Server
-                            antara Lain
-                            seperti GGC, FB group, cdn akamai lokal, CDN Netflix lokal, game ML, Garena, Microsoft,
-                            Amazon, Cloudflare
-                            dan akan terus
-                            bertambah kedepannya
-                        </p>
+                        <!-- Iterasi melalui koleksi services -->
+                        @foreach($services as $service)
+                            <div class="service">
+                                <h2 class="text-primary">{{ $service->title }}</h2>
+                                <p>{{ $service->description }}</p>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
-                <div class="col-md-5 order-md-2 " data-aos="zoom-in" data-aos-duration="2000">
-                    <!-- Menggunakan order untuk posisi gambar -->
+                <div class="col-md-5 order-md-2" data-aos="zoom-in" data-aos-duration="2000">
                     <img src="assets/images/Our.jpg" alt="About Me" class="img-fluid" />
                 </div>
             </div>
