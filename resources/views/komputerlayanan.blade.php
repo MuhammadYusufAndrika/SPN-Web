@@ -1,24 +1,28 @@
-@include ('partials.header')
+@include('partials.header')
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="sass/style.scss" />
+    <link rel="stylesheet" href="" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <script src="https://unpkg.com/feather-icons"></script>
-    <title>Layanan CCTV SPN - Surya Prima Net</title>
+    <title>Layanan Jaringan Komputer SPN - Surya Prima Net</title>
     <link rel="shortcut icon" href="/assets/images/SPN.png" type="image/x-icon" />
   </head>
 
   <body>
-    <!-- Corrousel CCTV -->
+    <!-- Navbar sementara -->
+
+    <!-- End Navbar -->
+
+    <!-- Corrousel Jarkom -->
     <section>
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -26,30 +30,21 @@
         </div>
         <div class="carousel-inner position-relative" style="width: 100%; height: 75vh">
           <div class="carousel-item active">
-            <img src="assets/images/carousel-1 (1).jpg" class="d-block w-100" alt="Slide 1" />
-            <div class="position-absolute" style="top: 35%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; padding: 5px">
-              <h1 class="text-light mb-3">
-                <span class="">Layanan Internet</span>
-                <span class="">Surya Prima Net</span>
-              </h1>
+            <img src="assets/images/carousel-1 (1).jpg" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block " style="height: 60%;">
+              <h1 style="font-weight: 700;">Membawa Dunia Menjadi Lebih Dekat</h1>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="assets/images/carousel-2.jpg" class="d-block w-100" alt="Slide 2" />
-            <div class="position-absolute" style="top: 35%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; padding: 4px">
-              <h1 class="text-light mb-3">
-                <span class="">Internet Cepat</span>
-                <span class="">Harga Terjangkau</span>
-              </h1>
+            <img src="assets/images/carousel-2.jpg" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block " style="height: 60%;">
+              <h1 style="font-weight: 700;">Membawa Dunia Menjadi Lebih Dekat</h1>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="assets/images/carousel-3.jpg" class="d-block w-100" alt="Slide 3" />
-            <div class="position-absolute" style="top: 35%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; padding: 4px">
-              <h1 class="text-light mb-3">
-                <span class="">Solusi Internet</span>
-                <span class="">Untuk Anda</span>
-              </h1>
+            <img src="assets/images/carousel-3.jpg" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block " style="height: 60%;">
+              <h1 style="font-weight: 700;">Membawa Dunia Menjadi Lebih Dekat</h1>
             </div>
           </div>
         </div>
@@ -63,7 +58,7 @@
         </button>
       </div>
     </section>
-    <!-- End Corrousel CCTV -->
+    <!-- End Corrousel Jarkom -->
 
     <!-- CCTV Teks -->
     <section>
@@ -72,11 +67,10 @@
           <div class="col-md-6 order-md-1">
             <!-- Order untuk mengatur urutan -->
             <div>
-              <h2 class="text-primary">Layanan CCTV</h2>
+              <h2 class="text-primary">Layanan Jaringan Komputer</h2>
               <p>
-                Bisnis saat ini menghadapi tantangan yang semakin meningkat dalam pengadaan dan pengelolaan infrastruktur Closed-Circuit Television (CCTV) mereka. Meskipun banyak bisnis telah beralih ke solusi CCTV berbasis cloud untuk
-                memberikan nilai tambah, namun masih ada kebutuhan yang kuat untuk infrastruktur khusus dalam menyediakan layanan CCTV. Layanan CCTV khusus, seperti JSN CCTV, menawarkan solusi yang memungkinkan sebuah bisnis untuk
-                mempertahankan kebijakan keamanan dan privasi yang ketat, serta untuk menjaga kontrol penuh atas lingkungan CCTV mereka sendiri.
+                Layanan jaringan komputer mencakup berbagai fitur dan kemampuan yang memungkinkan komunikasi, berbagi sumber daya, dan akses ke informasi. Ini termasuk komunikasi antara pengguna, akses ke berkas dan perangkat, fitur
+                keamanan untuk melindungi data, alat manajemen jaringan, penyediaan layanan seperti email, serta upaya untuk memastikan ketersediaan dan kinerja jaringan yang optimal.
               </p>
             </div>
           </div>
@@ -102,16 +96,16 @@
         <div class="row justify-content-center" data-aos="zoom-in" data-aos-duration="800">
           <!-- Card 1 -->
           <div
-            class="card m-3"
+            class="card m-"
             style="width: 18rem; transition: transform 0.3s, box-shadow 0.3s"
             onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='5px 5px 10px #727272';"
             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
           >
-            <img class="card-img-top" src="assets/images/cctv.jpg" alt="Card image cap" />
+            <img class="card-img-top" src="/assets/images/gambar PC.png" alt="Card image cap" style="margin-top: 15px" />
             <div class="card-body">
-              <h5 class="card-title">CCTV 1</h5>
-              <h5>2Mega</h5>
-              <h1 class="card-text">Rp200rb/ bulan</h1>
+              <h5 class="card-title">Paket 1</h5>
+              <h5>10 PC</h5>
+              <h1 class="card-text">Rp12jt</h1>
               <p class="card-info">*belum termasuk Ppn 11%</p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Beli Paket</button>
             </div>
@@ -123,11 +117,11 @@
             onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='5px 5px 10px #727272';"
             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
           >
-            <img class="card-img-top" src="assets/images/cctv.jpg" alt="Card image cap" />
+            <img class="card-img-top" src="/assets/images/gambar PC.png" alt="Card image cap" style="margin-top: 15px" />
             <div class="card-body">
-              <h5 class="card-title">CCTV 2</h5>
-              <h5>25Mega</h5>
-              <h1 class="card-text">Rp500rb/ bulan</h1>
+              <h5 class="card-title">Paket 2</h5>
+              <h5>15 PC</h5>
+              <h1 class="card-text">Rp15jt</h1>
               <p class="card-info">*belum termasuk Ppn 11%</p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Beli Paket</button>
             </div>
@@ -139,11 +133,11 @@
             onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='5px 5px 10px #727272';"
             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
           >
-            <img class="card-img-top" src="assets/images/cctv.jpg" alt="Card image cap" />
+            <img class="card-img-top" src="/assets/images/gambar PC.png" alt="Card image cap" style="margin-top: 15px" />
             <div class="card-body">
-              <h5 class="card-title">CCTV 3</h5>
-              <h5>30Mega</h5>
-              <h1 class="card-text">Rp1,5jt/ bulan</h1>
+              <h5 class="card-title">Paket 3</h5>
+              <h5>20 PC</h5>
+              <h1 class="card-text">Rp18jt</h1>
               <p class="card-info">*belum termasuk Ppn 11%</p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Beli Paket</button>
             </div>
@@ -155,11 +149,11 @@
             onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='5px 5px 10px #727272';"
             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
           >
-            <img class="card-img-top" src="assets/images/cctv.jpg" alt="Card image cap" />
+            <img class="card-img-top" src="/assets/images/gambar PC.png" alt="Card image cap" style="margin-top: 15px" />
             <div class="card-body">
-              <h5 class="card-title">CCTV 4</h5>
-              <h5>40Mega</h5>
-              <h1 class="card-text">Rp1,5jt/ bulan</h1>
+              <h5 class="card-title">Paket 4</h5>
+              <h5>30 PC</h5>
+              <h1 class="card-text">Rp20jt</h1>
               <p class="card-info">*belum termasuk Ppn 11%</p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Beli Paket</button>
             </div>
@@ -171,9 +165,10 @@
 
     <!-- Footer -->
     <section>
-     @include('partials.footer')
+        @include ('partials.footer')
     </section>
-    <!-- End Footer -->
+    <!-- accordion -->
+    <!-- Footer -->
 
     <script src="assets/script/index.js"></script>
   </body>
