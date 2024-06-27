@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\CarouselController;
 use App\Http\Controllers\Admin\DescriptionController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\LayananInternetController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PengaduanController;
 
 use App\Models\LayananInternet;
@@ -24,7 +24,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('carousels', CarouselController::class);
     Route::resource('descriptions', DescriptionController::class);
     Route::resource('services', ServiceController::class);
-    Route::resource('layanan-internet', LayananInternetController::class);
+    Route::resource('layanan-internet', LayananController::class);
+    Route::resource('contact', PengaduanController::class);
 });
 
 // Route::prefix('admin')->name('admin.')->group(function () {

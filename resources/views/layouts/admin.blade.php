@@ -68,6 +68,9 @@
                             <a class="nav-link" href="{{ route('admin.layanan-internet.index') }}">
                                 Layanan Internet
                             </a>
+                            <a class="nav-link" href="{{ route('admin.contact.index') }}">
+                                Contact
+                            </a>
                         </li>
                     </ul>
                 </div>
