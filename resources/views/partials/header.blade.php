@@ -42,12 +42,12 @@
                                     data-bs-toggle="dropdown" aria-expanded="false">Layanan</a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('internetlayanan') }}">Internet</a>
+                                        <a class="dropdown-item" href="">Internet</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="jarkomlayanan.html">Jaringan Komputer</a>
+                                        <a class="dropdown-item" href="{{ route('komputerlayanan') }}">Jaringan Komputer</a>
                                     </li>
-                                    <li><a class="dropdown-item" href="cctvlayanan.html">CCTV</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('cctvlayanan') }}">CCTV</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">

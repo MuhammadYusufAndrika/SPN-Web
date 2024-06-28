@@ -69,21 +69,17 @@
     <section>
       <div class="container my-5">
         <div class="row align-items-center">
-          <div class="col-md-6 order-md-1">
-            <!-- Order untuk mengatur urutan -->
-            <div>
-              <h2 class="text-primary">Layanan CCTV</h2>
-              <p>
-                Bisnis saat ini menghadapi tantangan yang semakin meningkat dalam pengadaan dan pengelolaan infrastruktur Closed-Circuit Television (CCTV) mereka. Meskipun banyak bisnis telah beralih ke solusi CCTV berbasis cloud untuk
-                memberikan nilai tambah, namun masih ada kebutuhan yang kuat untuk infrastruktur khusus dalam menyediakan layanan CCTV. Layanan CCTV khusus, seperti JSN CCTV, menawarkan solusi yang memungkinkan sebuah bisnis untuk
-                mempertahankan kebijakan keamanan dan privasi yang ketat, serta untuk menjaga kontrol penuh atas lingkungan CCTV mereka sendiri.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-5 order-md-2" data-aos="zoom-in" data-aos-duration="2000">
-            <!-- Menggunakan order untuk posisi gambar -->
-            <img src="assets/images/Our.jpg" alt="About Me" class="img-fluid" />
-          </div>
+          @foreach ($sections as $section)
+            @if($section->type == 'cctv-text')
+              <div class="col-md-6 order-md-1">
+                <h2 class="text-primary">{{ $section->title }}</h2>
+                <p>{{ $section->description }}</p>
+              </div>
+              <div class="col-md-5 order-md-2" data-aos="zoom-in" data-aos-duration="2000">
+                <img src="{{ asset('storage/' . $section->image) }}" alt="About Me" class="img-fluid" />
+              </div>
+            @endif
+          @endforeach
         </div>
       </div>
     </section>
@@ -91,79 +87,24 @@
 
     <!-- Card  -->
     <section>
-      <!-- pilih paket -->
       <div class="pilih-paket text-center my-5">
         <h5>PAKET INTERNET PILIHAN</h5>
         <h1>Pilih Paketmu</h1>
       </div>
-
-      <!-- Product list Start -->
       <section id="home">
         <div class="row justify-content-center" data-aos="zoom-in" data-aos-duration="800">
-          <!-- Card 1 -->
-          <div
-            class="card m-3"
-            style="width: 18rem; transition: transform 0.3s, box-shadow 0.3s"
-            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='5px 5px 10px #727272';"
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
-          >
-            <img class="card-img-top" src="assets/images/cctv.jpg" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title">CCTV 1</h5>
-              <h5>2Mega</h5>
-              <h1 class="card-text">Rp200rb/ bulan</h1>
-              <p class="card-info">*belum termasuk Ppn 11%</p>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Beli Paket</button>
-            </div>
-          </div>
-          <!-- Card 2 -->
-          <div
-            class="card m-3"
-            style="width: 18rem; transition: transform 0.3s, box-shadow 0.3s"
-            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='5px 5px 10px #727272';"
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
-          >
-            <img class="card-img-top" src="assets/images/cctv.jpg" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title">CCTV 2</h5>
-              <h5>25Mega</h5>
-              <h1 class="card-text">Rp500rb/ bulan</h1>
-              <p class="card-info">*belum termasuk Ppn 11%</p>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Beli Paket</button>
-            </div>
-          </div>
-          <!-- Card 3 -->
-          <div
-            class="card m-3"
-            style="width: 18rem; transition: transform 0.3s, box-shadow 0.3s"
-            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='5px 5px 10px #727272';"
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
-          >
-            <img class="card-img-top" src="assets/images/cctv.jpg" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title">CCTV 3</h5>
-              <h5>30Mega</h5>
-              <h1 class="card-text">Rp1,5jt/ bulan</h1>
-              <p class="card-info">*belum termasuk Ppn 11%</p>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Beli Paket</button>
-            </div>
-          </div>
-          <!-- Card 4 -->
-          <div
-            class="card m-3"
-            style="width: 18rem; transition: transform 0.3s, box-shadow 0.3s"
-            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='5px 5px 10px #727272';"
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
-          >
-            <img class="card-img-top" src="assets/images/cctv.jpg" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title">CCTV 4</h5>
-              <h5>40Mega</h5>
-              <h1 class="card-text">Rp1,5jt/ bulan</h1>
-              <p class="card-info">*belum termasuk Ppn 11%</p>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Beli Paket</button>
-            </div>
-          </div>
+          @foreach ($sections as $section)
+            @if($section->type == 'cctv-package')
+              <div class="card m-3" style="width: 18rem;">
+                <img class="card-img-top" src="{{ asset('storage/' . $section->image) }}" alt="Card image cap" />
+                <div class="card-body">
+                  <h5 class="card-title">{{ $section->title }}</h5>
+                  <p class="card-text">{{ $section->description }}</p>
+                  <button type="button" class="btn btn-primary">Beli Paket</button>
+                </div>
+              </div>
+            @endif
+          @endforeach
         </div>
       </section>
     </section>

@@ -65,7 +65,7 @@
                        
                         <li class="nav-item">
                             <h5>New Pages</h5>
-                            <a class="nav-link" href="{{ route('admin.layanan-internet.index') }}">
+                            <a class="nav-link" href="{{ route('admin.layanancctv.index') }}">
                                 Layanan Internet
                             </a>
                             <a class="nav-link" href="{{ route('admin.contact.index') }}">
