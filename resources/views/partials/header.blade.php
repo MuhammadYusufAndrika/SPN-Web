@@ -42,7 +42,7 @@
                                     data-bs-toggle="dropdown" aria-expanded="false">Layanan</a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="">Internet</a>
+                                        <a class="dropdown-item" href="{{ route('internetlayanan') }}">Internet</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="{{ route('komputerlayanan') }}">Jaringan Komputer</a>

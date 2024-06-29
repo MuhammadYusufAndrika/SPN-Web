@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\DescriptionController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Admin\LayananCCTVController;
+use App\Http\Controllers\Admin\LayananInternetController;
 use App\Http\Controllers\PengaduanController;
 
 use App\Models\LayananInternet;
@@ -26,6 +27,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('descriptions', DescriptionController::class);
     Route::resource('services', ServiceController::class);
     Route::resource('layanancctv', LayananCCTVController::class);
+    Route::resource('layananinternet', LayananInternetController::class);
     Route::resource('contact', PengaduanController::class);
 });
 
@@ -55,10 +57,9 @@ Route::get('/komputerlayanan', function () {
 })->name('komputerlayanan');
 
 Route::get('/internetlayanan', function () {
-    return view('internetlayanan');
+    $sections = LayananInternet::all();
+    return view('internetlayanan', compact('sections'));
 })->name('internetlayanan');
 
 Route::post('create-contact', [PengaduanController::class, "store"]);
 // Route::resource('layanan-jarkom', [PengaduanController::class, "store"]);
-
-

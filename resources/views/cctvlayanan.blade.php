@@ -99,7 +99,7 @@
     <!-- Card  -->
     <section>
         <div class="pilih-paket text-center my-5">
-            <h5>PAKET INTERNET PILIHAN</h5>
+            <h5>PAKET CCTV PILIHAN</h5>
             <h1>Pilih Paketmu</h1>
         </div>
         <section id="home">
