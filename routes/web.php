@@ -60,3 +60,5 @@ Route::get('/internetlayanan', function () {
 
 Route::post('create-contact', [PengaduanController::class, "store"]);
 // Route::resource('layanan-jarkom', [PengaduanController::class, "store"]);
+
+
