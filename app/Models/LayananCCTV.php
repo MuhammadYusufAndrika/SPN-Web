@@ -9,5 +9,7 @@ class LayananCCTV extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['type','title','description','image','price'];
+    protected $fillable = ['type', 'title', 'description', 'image', 'price'];
+
+    protected $table = 'layanancctv';
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\LayananCCTV;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\CarouselController;
@@ -15,7 +16,6 @@ use App\Models\Pengaduan;
 
 
 Route::get('/', [IndexController::class, 'index']);
-Route::get('/cctvlayanan', [LayananCCTVController::class, 'index'])->name('cctvlayanan');
 
 Route::prefix('admin')->name('admin.')->group(function () {
     // Rute untuk tampilan admin.blade.php
@@ -46,7 +46,8 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/cctvlayanan', function () {
-    return view('cctvlayanan');
+    $sections = LayananCCTV::all();
+    return view('cctvlayanan', compact('sections'));
 })->name('cctvlayanan');
 
 Route::get('/komputerlayanan', function () {
