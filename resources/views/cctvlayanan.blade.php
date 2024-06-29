@@ -112,6 +112,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $section->title }}</h5>
                                 <p class="card-text">{{ $section->description }}</p>
+                                <p class="card-text">{{ $section->price }}</p>
                                 <button type="button" class="btn btn-primary">Beli Paket</button>
                             </div>
                         </div>
