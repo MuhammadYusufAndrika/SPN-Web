@@ -9,9 +9,11 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Admin\LayananCCTVController;
 use App\Http\Controllers\Admin\LayananInternetController;
+use App\Http\Controllers\Admin\LayananKomputerController;
 use App\Http\Controllers\PengaduanController;
 
 use App\Models\LayananInternet;
+use App\Models\LayananKomputer;
 use App\Models\Pengaduan;
 
 
@@ -21,13 +23,13 @@ Route::get('/', [IndexController::class, 'index']);
 Route::prefix('admin')->name('admin.')->group(function () {
     // Rute untuk tampilan admin.blade.php
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
-
     // Rute yang sudah ada
     Route::resource('carousels', CarouselController::class);
     Route::resource('descriptions', DescriptionController::class);
     Route::resource('services', ServiceController::class);
     Route::resource('layanancctv', LayananCCTVController::class);
     Route::resource('layananinternet', LayananInternetController::class);
+    Route::resource('layanankomputer', LayananKomputerController::class);
     Route::resource('contact', PengaduanController::class);
 });
 
@@ -53,7 +55,8 @@ Route::get('/cctvlayanan', function () {
 })->name('cctvlayanan');
 
 Route::get('/komputerlayanan', function () {
-    return view('komputerlayanan');
+    $sections = LayananKomputer::all();
+    return view('komputerlayanan', compact('sections'));
 })->name('komputerlayanan');
 
 Route::get('/internetlayanan', function () {

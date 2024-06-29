@@ -77,7 +77,7 @@
       <div class="container my-5">
           <div class="row align-items-center">
               @foreach ($sections as $section)
-                  @if ($section->type == 'cctv-text')
+                  @if ($section->type == 'internet-text')
                       <div class="col-md-6 order-md-1">
                           <h2 class="text-primary">{{ $section->title }}</h2>
                           <p>{{ $section->description }}</p>
@@ -101,7 +101,7 @@
       <section id="home">
           <div class="row justify-content-center" data-aos="zoom-in" data-aos-duration="800">
               @foreach ($sections as $section)
-                  @if ($section->type == 'cctv-package')
+                  @if ($section->type == 'internet-package')
                       <div class="card m-3" style="width: 18rem;">
                           <img class="card-img-top" src="{{ asset('storage/' . $section->image) }}"
                               alt="Card image cap" />

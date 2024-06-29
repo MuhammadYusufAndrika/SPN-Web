@@ -3,23 +3,23 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\LayananInternet;
+use App\Models\LayananKomputer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class LayananInternetController extends Controller
+class LayananKomputerController extends Controller
 {
     // Menampilkan semua sections
     public function index()
     {
-        $sections = LayananInternet::all();
-        return view('admin.layananinternet.index', compact('sections'));
+        $sections = LayananKomputer::all();
+        return view('admin.layanankomputer.index', compact('sections'));
     }
 
     // Menampilkan form untuk membuat section baru
     public function create()
     {
-        return view('admin.layananinternet.create');
+        return view('admin.layanankomputer.create');
     }
 
     // Menyimpan section baru ke database
@@ -38,19 +38,19 @@ class LayananInternetController extends Controller
             $validatedData['image'] = $imagePath;
         }
 
-        LayananInternet::create($validatedData);
+        LayananKomputer::create($validatedData);
 
-        return redirect()->route('admin.layananinternet.index')->with('success', 'Section created successfully.');
+        return redirect()->route('admin.layanankomputer.index')->with('success', 'Section created successfully.');
     }
 
     // Menampilkan form untuk mengedit section
-    public function edit(LayananInternet $layananinternet)
+    public function edit(LayananKomputer $layanankomputer)
     {
-        return view('admin.layananinternet.edit', compact('layananinternet'));
+        return view('admin.layanankomputer.edit', compact('layanankomputer'));
     }
 
     // Memperbarui section yang ada di database
-    public function update(Request $request, LayananInternet $layananinternet)
+    public function update(Request $request, LayananKomputer $layanankomputer)
     {
         $validatedData = $request->validate([
             'type' => 'required|string|max:255',
@@ -63,24 +63,24 @@ class LayananInternetController extends Controller
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('images', 'public');
             // Hapus gambar lama jika ada
-            if ($layananinternet->image) {
-                Storage::disk('public')->delete($layananinternet->image);
+            if ($layanankomputer->image) {
+                Storage::disk('public')->delete($layanankomputer->image);
             }
             $validatedData['image'] = $imagePath;
         }
 
-        $layananinternet->update($validatedData);
+        $layanankomputer->update($validatedData);
 
-        return redirect()->route('admin.layananinternet.index')->with('success', 'Section updated successfully.');
+        return redirect()->route('admin.layanankomputer.index')->with('success', 'Section updated successfully.');
     }
 
     // Menghapus section dari database
-    public function destroy(LayananInternet $layananinternet)
+    public function destroy(LayananKomputer $layanankomputer)
     {
-        if ($layananinternet->image) {
-            Storage::disk('public')->delete($layananinternet->image);
+        if ($layanankomputer->image) {
+            Storage::disk('public')->delete($layanankomputer->image);
         }
-        $layananinternet->delete();
-        return redirect()->route('admin.layananinternet.index')->with('success', 'Section deleted successfully.');
+        $layanankomputer->delete();
+        return redirect()->route('admin.layanankomputer.index')->with('success', 'Section deleted successfully.');
     }
 }

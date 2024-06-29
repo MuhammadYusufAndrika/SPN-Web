@@ -60,107 +60,51 @@
     </section>
     <!-- End Corrousel Jarkom -->
 
-    <!-- CCTV Teks -->
+    <!-- Komputer Teks -->
     <section>
       <div class="container my-5">
-        <div class="row align-items-center">
-          <div class="col-md-6 order-md-1">
-            <!-- Order untuk mengatur urutan -->
-            <div>
-              <h2 class="text-primary">Layanan Jaringan Komputer</h2>
-              <p>
-                Layanan jaringan komputer mencakup berbagai fitur dan kemampuan yang memungkinkan komunikasi, berbagi sumber daya, dan akses ke informasi. Ini termasuk komunikasi antara pengguna, akses ke berkas dan perangkat, fitur
-                keamanan untuk melindungi data, alat manajemen jaringan, penyediaan layanan seperti email, serta upaya untuk memastikan ketersediaan dan kinerja jaringan yang optimal.
-              </p>
-            </div>
+          <div class="row align-items-center">
+              @foreach ($sections as $section)
+                  @if ($section->type == 'komputer-text')
+                      <div class="col-md-6 order-md-1">
+                          <h2 class="text-primary">{{ $section->title }}</h2>
+                          <p>{{ $section->description }}</p>
+                      </div>
+                      <div class="col-md-5 order-md-2" data-aos="zoom-in" data-aos-duration="2000">
+                          <img src="{{ asset('storage/' . $section->image) }}" alt="About Me" class="img-fluid" />
+                      </div>
+                  @endif
+              @endforeach
           </div>
-          <div class="col-md-5 order-md-2" data-aos="zoom-in" data-aos-duration="2000">
-            <!-- Menggunakan order untuk posisi gambar -->
-            <img src="assets/images/Our.jpg" alt="About Me" class="img-fluid" />
-          </div>
-        </div>
       </div>
-    </section>
-    <!-- End CCTV Teks -->
+  </section>
+    <!-- End Komputer Teks -->
 
     <!-- Card  -->
     <section>
-      <!-- pilih paket -->
       <div class="pilih-paket text-center my-5">
-        <h5>PAKET INTERNET PILIHAN</h5>
-        <h1>Pilih Paketmu</h1>
+          <h5>PAKET CCTV PILIHAN</h5>
+          <h1>Pilih Paketmu</h1>
       </div>
-
-      <!-- Product list Start -->
       <section id="home">
-        <div class="row justify-content-center" data-aos="zoom-in" data-aos-duration="800">
-          <!-- Card 1 -->
-          <div
-            class="card m-"
-            style="width: 18rem; transition: transform 0.3s, box-shadow 0.3s"
-            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='5px 5px 10px #727272';"
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
-          >
-            <img class="card-img-top" src="/assets/images/gambar PC.png" alt="Card image cap" style="margin-top: 15px" />
-            <div class="card-body">
-              <h5 class="card-title">Paket 1</h5>
-              <h5>10 PC</h5>
-              <h1 class="card-text">Rp12jt</h1>
-              <p class="card-info">*belum termasuk Ppn 11%</p>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Beli Paket</button>
-            </div>
+          <div class="row justify-content-center" data-aos="zoom-in" data-aos-duration="800">
+              @foreach ($sections as $section)
+                  @if ($section->type == 'komputer-package')
+                      <div class="card m-3" style="width: 18rem;">
+                          <img class="card-img-top" src="{{ asset('storage/' . $section->image) }}"
+                              alt="Card image cap" />
+                          <div class="card-body">
+                              <h5 class="card-title">{{ $section->title }}</h5>
+                              <p class="card-text">{{ $section->description }}</p>
+                              <p class="card-text">{{ $section->price }}</p>
+                              <button type="button" class="btn btn-primary">Beli Paket</button>
+                          </div>
+                      </div>
+                  @endif
+              @endforeach
           </div>
-          <!-- Card 2 -->
-          <div
-            class="card m-3"
-            style="width: 18rem; transition: transform 0.3s, box-shadow 0.3s"
-            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='5px 5px 10px #727272';"
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
-          >
-            <img class="card-img-top" src="/assets/images/gambar PC.png" alt="Card image cap" style="margin-top: 15px" />
-            <div class="card-body">
-              <h5 class="card-title">Paket 2</h5>
-              <h5>15 PC</h5>
-              <h1 class="card-text">Rp15jt</h1>
-              <p class="card-info">*belum termasuk Ppn 11%</p>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Beli Paket</button>
-            </div>
-          </div>
-          <!-- Card 3 -->
-          <div
-            class="card m-3"
-            style="width: 18rem; transition: transform 0.3s, box-shadow 0.3s"
-            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='5px 5px 10px #727272';"
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
-          >
-            <img class="card-img-top" src="/assets/images/gambar PC.png" alt="Card image cap" style="margin-top: 15px" />
-            <div class="card-body">
-              <h5 class="card-title">Paket 3</h5>
-              <h5>20 PC</h5>
-              <h1 class="card-text">Rp18jt</h1>
-              <p class="card-info">*belum termasuk Ppn 11%</p>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Beli Paket</button>
-            </div>
-          </div>
-          <!-- Card 4 -->
-          <div
-            class="card m-3"
-            style="width: 18rem; transition: transform 0.3s, box-shadow 0.3s"
-            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='5px 5px 10px #727272';"
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
-          >
-            <img class="card-img-top" src="/assets/images/gambar PC.png" alt="Card image cap" style="margin-top: 15px" />
-            <div class="card-body">
-              <h5 class="card-title">Paket 4</h5>
-              <h5>30 PC</h5>
-              <h1 class="card-text">Rp20jt</h1>
-              <p class="card-info">*belum termasuk Ppn 11%</p>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Beli Paket</button>
-            </div>
-          </div>
-        </div>
       </section>
-    </section>
+  </section>
     <!-- End Card -->
 
     <!-- Footer -->

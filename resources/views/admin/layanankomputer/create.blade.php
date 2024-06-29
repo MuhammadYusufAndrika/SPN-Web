@@ -3,13 +3,13 @@
 @section('content')
     <div class="container">
         <h1>Add New Section</h1>
-        <form action="{{ route('admin.layananinternet.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.layanankomputer.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <select class="form-select" aria-label="Default select example" name="type" id="type" r required>
                     <option selected>Pilih Type</option>
-                    <option value="internet-text">internet-text</option>
-                    <option value="internet-package">internet-package</option>
+                    <option value="komputer-text">komputer-text</option>
+                    <option value="komputer-package">komputer-package</option>
                 </select>
             </div>
             <div class="mb-3">
