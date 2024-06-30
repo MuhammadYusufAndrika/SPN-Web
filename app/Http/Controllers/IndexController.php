@@ -15,10 +15,5 @@ class IndexController extends Controller
         $services = Service::all();
 
         return view('index', compact('firstDescription' , 'carousels' , 'services'));
-        // Mengambil data untuk description (baris kedua)
-        // $description = Description::skip(1)->first();
-
-        // Mengirimkan kedua variabel ke view
-        // return view('index', compact('descriptions', 'description'));
     }
 }

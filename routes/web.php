@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\LayananCCTV;
+use App\Models\About;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\CarouselController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Admin\LayananCCTVController;
 use App\Http\Controllers\PengaduanController;
+use App\Http\Controllers\AboutController;
 
 use App\Models\LayananInternet;
 use App\Models\Pengaduan;
@@ -27,6 +29,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('services', ServiceController::class);
     Route::resource('layanancctv', LayananCCTVController::class);
     Route::resource('contact', PengaduanController::class);
+    Route::resource('about', AboutController::class);
 });
 
 // Route::prefix('admin')->name('admin.')->group(function () {
@@ -44,6 +47,11 @@ Route::get('/profile', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::get('/about', function () {
+    $abouts = About::all();
+    return view('about', compact('abouts'));
+})->name('about');
 
 Route::get('/cctvlayanan', function () {
     $sections = LayananCCTV::all();
