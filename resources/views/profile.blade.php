@@ -1,3 +1,4 @@
+@include("partials.header")
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,90 +15,6 @@
     <link rel="stylesheet" href="/sass/style.css" />
   </head>
   <body style="overflow: hidden; display: flex; justify-content: center; align-items: center;">
-    <nav
-      class="navbar navbar-expand-lg fixed-top"
-      style="box-shadow: 0 0 20px rgba(1, 1, 1, 0.2)"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand me-auto" href="#">
-          <img
-            src="/assets/images/banner.jpg"
-            alt="SPN"
-            width="100"
-            height="auto"
-          />
-        </a>
-        <div
-          class="offcanvas offcanvas-end"
-          tabindex="-1"
-          id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel"
-        >
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">SPN</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="/Index.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Layanan
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="/payment.html">Internet</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="/jarkomlayanan.html"
-                      >Jaringan Komputer</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="cctvlayanan.html">CCTV</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <a href="/profile.html" class="login"><i data-feather="user"></i></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav>
     <div class="user-profile">
       <div class="d-flex">
         <!-- sidebar menu -->
@@ -106,7 +23,7 @@
             <img src="/assets/images/About.jpg" alt="" />
           </div>
           <div class="menu-sidebar-profile">
-            <a class="list" href="/profile.html">Profile</a>
+            <a class="list" href="{{ url('/profile') }}">Profile</a>
             <a class="list" href="#resetpasswordview">Password</a>
           </div>
           <a class="btn button-logout" href="/login.html" role="button"

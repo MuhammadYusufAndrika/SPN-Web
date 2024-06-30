@@ -1,6 +1,7 @@
 <!-- Ini aku yang ngerjain (Rehan) -->
 @include ('partials.header')
 
+@include('partials.header')
 <!DOCTYPE html>
 <html lang="en">
 <head>

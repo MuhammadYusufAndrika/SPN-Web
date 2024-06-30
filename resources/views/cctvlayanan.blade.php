@@ -19,47 +19,30 @@
 
 <body>
     <!-- Corrousel CCTV -->
-    <section>
+    <section class="">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
+                @foreach ($carousels as $carousel)
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"
+                        aria-current="true" aria-label="Slide {{ $loop->index + 1 }}"></button>
+                @endforeach
             </div>
-            <div class="carousel-inner position-relative" style="width: 100%; height: 75vh">
-                <div class="carousel-item active">
-                    <img src="assets/images/carousel-1 (1).jpg" class="d-block w-100" alt="Slide 1" />
-                    <div class="position-absolute"
-                        style="top: 35%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; padding: 5px">
-                        <h1 class="text-light mb-3">
-                            <span class="">Layanan Internet</span>
-                            <span class="">Surya Prima Net</span>
-                        </h1>
+            <div class="carousel-inner position-relative" style="width: 100%; height: 75vh;">
+                @foreach ($carousels as $carousel)
+                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                        <img src="{{ asset('storage/' . $carousel->image) }}" class="d-block w-100"
+                            alt="{{ $carousel->title }}">
+                        <div class="position-absolute"
+                            style="top: 35%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; padding: 5px;">
+                            <h1 class="text-light mb-3">
+                                <span class="text-primary">{{ $carousel->title }}</span>
+                                <span class="text-danger">{{ $carousel->subtitle }}</span>
+                            </h1>
+                            <a href="#" class="cta btn btn-primary mt-3">Ayo Berlangganan</a>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/carousel-2.jpg" class="d-block w-100" alt="Slide 2" />
-                    <div class="position-absolute"
-                        style="top: 35%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; padding: 4px">
-                        <h1 class="text-light mb-3">
-                            <span class="">Internet Cepat</span>
-                            <span class="">Harga Terjangkau</span>
-                        </h1>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/carousel-3.jpg" class="d-block w-100" alt="Slide 3" />
-                    <div class="position-absolute"
-                        style="top: 35%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; padding: 4px">
-                        <h1 class="text-light mb-3">
-                            <span class="">Solusi Internet</span>
-                            <span class="">Untuk Anda</span>
-                        </h1>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
@@ -99,7 +82,7 @@
     <!-- Card  -->
     <section>
         <div class="pilih-paket text-center my-5">
-            <h5>PAKET INTERNET PILIHAN</h5>
+            <h5>PAKET CCTV PILIHAN</h5>
             <h1>Pilih Paketmu</h1>
         </div>
         <section id="home">
