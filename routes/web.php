@@ -10,6 +10,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Admin\LayananCCTVController;
 use App\Http\Controllers\Admin\LayananInternetController;
 use App\Http\Controllers\Admin\LayananKomputerController;
+use App\Models\Carousel;
 use App\Http\Controllers\PengaduanController;
 
 use App\Models\LayananInternet;
@@ -49,19 +50,28 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+// Route::get('/cctvlayanan', function () {
+//     $sections = LayananCCTV::all();
+//     return view('cctvlayanan', compact('sections' , 'carousels'));
+// })->name('cctvlayanan');
+
 Route::get('/cctvlayanan', function () {
     $sections = LayananCCTV::all();
-    return view('cctvlayanan', compact('sections'));
+    $carousels = Carousel::all();
+    return view('cctvlayanan', compact('sections','carousels'));
 })->name('cctvlayanan');
+
 
 Route::get('/komputerlayanan', function () {
     $sections = LayananKomputer::all();
-    return view('komputerlayanan', compact('sections'));
+    $carousels = Carousel::all();
+    return view('komputerlayanan', compact('sections','carousels'));
 })->name('komputerlayanan');
 
 Route::get('/internetlayanan', function () {
     $sections = LayananInternet::all();
-    return view('internetlayanan', compact('sections'));
+    $carousels = Carousel::all();
+    return view('internetlayanan', compact('sections','carousels'));
 })->name('internetlayanan');
 
 Route::post('create-contact', [PengaduanController::class, "store"]);
