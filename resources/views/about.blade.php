@@ -15,39 +15,35 @@
 </head>
 <body>
   <!-- Carousel About -->
-  <section>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        @foreach ($abouts as $about)
-         @if($about->type == 'carausel')
-        <button type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"
-          aria-current="true" aria-label="Slide {{ $loop->index + 1 }}"></button>
-          @endif
-        @endforeach
-      </div>
-      <div class="carousel-inner">
-        @foreach ($abouts as $about)
-          @if($about->type == 'carausel')
-            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-              <img src="{{ asset('storage/' . $about->image) }}" class="d-block w-100"
-                alt="{{ $about->title }}">
+  <section class="">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                @foreach ($carousels as $carousel)
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"
+                        aria-current="true" aria-label="Slide {{ $loop->index + 1 }}"></button>
+                @endforeach
             </div>
-          @endif
-        @endforeach
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </section>
+            <div class="carousel-inner position-relative" style="width: 100%; height: 75vh;">
+                @foreach ($carousels as $carousel)
+                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                        <img src="{{ asset('storage/' . $carousel->image) }}" class="d-block w-100"
+                            alt="{{ $carousel->title }}">
+                    </div>
+                @endforeach
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
   <!-- End Carousel About -->
 
   <!-- Description Section -->
@@ -56,9 +52,7 @@
       <div id="Home" class="row align-items-center">
         <div class="col-md-6">
           @foreach ($abouts as $about)
-            @if($about->type == 'body')
               <img src="{{ asset('storage/' . $about->image) }}" class="d-block w-100" alt="{{ $about->title }}">
-            @endif
           @endforeach
         </div>
         <div class="col-md-6" style="padding-left: 50px">

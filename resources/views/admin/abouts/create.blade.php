@@ -10,11 +10,6 @@
             <label for="image" class="form-label">Image</label>
             <input type="file" class="form-control" id="image" name="image" required>
         </div>
-        <select class="form-select mb-3" aria-label="Default select example" name="type">
-            <option selected>Type Gambar</option>
-            <option value="carausel">Carausel</option>
-            <option value="body">Body</option>
-        </select>
         <div class="form-floating mb-3">
             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="description"></textarea>
             <label for="floatingTextarea2">Description</label>

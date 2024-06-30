@@ -10,7 +10,6 @@
             <tr>
                 <th>NO</th>
                 <th>Image</th>
-                <th>Type</th>
                 <th>Description</th>
                 <th>Action</th>
             </tr>
@@ -20,7 +19,6 @@
             <tr>
                 <td>{{ $about->id }}</td>
                 <td><img src="{{ asset('storage/' .  $about->image) }}" width="100" alt=""></td>
-                <td>{{ $about->type }}</td>
                 <td>{{ $about->description }}</td>
                 <td>
                     <a href="{{ route('admin.about.edit', $about->id) }}" class="btn btn-warning">Edit</a>

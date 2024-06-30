@@ -2,6 +2,8 @@
 
 use App\Models\LayananCCTV;
 use App\Models\About;
+use App\Models\Description;
+use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\CarouselController;
@@ -22,6 +24,12 @@ use App\Models\Pengaduan;
 
 
 Route::get('/', [IndexController::class, 'index']);
+Route::get("/index", function(){
+    $firstDescription = Description::first();
+    $carousels = Carousel::all();
+    $services = Service::all();
+    return view('index', compact('firstDescription' , 'carousels' , 'services'));
+});
 
 Route::prefix('admin')->name('admin.')->group(function () {
     // Rute untuk tampilan admin.blade.php
@@ -44,7 +52,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 //     Route::resource('layanan-internet', LayananInternetController::class);
 // });
 
-// Corrected syntax and added route name
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
@@ -58,6 +65,12 @@ Route::get('/cctvlayanan', function () {
     $carousels = Carousel::all();
     return view('cctvlayanan', compact('sections','carousels'));
 })->name('cctvlayanan');
+
+Route::get('/about', function () {
+    $abouts = About::all();
+    $carousels = Carousel::all();
+    return view('about', compact('abouts', 'carousels'));
+})->name('about');
 
 
 Route::get('/komputerlayanan', function () {

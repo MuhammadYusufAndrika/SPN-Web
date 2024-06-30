@@ -33,7 +33,6 @@ class AboutController extends Controller
     {
         $request->validate([
             'image' => 'required|image',
-            'type' => 'required|string|max:255',
             'description' => 'required|string|max:255',
         ]);
 
@@ -44,7 +43,6 @@ class AboutController extends Controller
         About::create([
             'image' => $imagePath,
             'description' => $request->description,
-            'type' => $request->type,
         ]);
 
         return redirect()->route('admin.about.index')->with('success', 'Abouts item created successfully');
@@ -76,7 +74,6 @@ class AboutController extends Controller
 
         $request->validate([
             'image' => 'image',
-            'type' => 'required|string|max:255',
             'description' => 'required|string|max:255',
         ]);
 
@@ -92,7 +89,6 @@ class AboutController extends Controller
         // Mengupdate data lainnya
         $about->update([
             'description' => $request->description,
-            'type' => $request->type,
         ]);
 
         return redirect()->route('admin.about.index')->with('success', 'About item updated successfully.');
