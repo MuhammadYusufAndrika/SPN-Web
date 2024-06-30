@@ -26,7 +26,7 @@
             <a class="list" href="{{ url('/profile') }}">Profile</a>
             <a class="list" href="#resetpasswordview">Password</a>
           </div>
-          <a class="btn button-logout" href="/login.html" role="button"
+          <a class="btn button-logout" href="{{ url('/login') }}" role="button"
             >Logout</a
           >
         </div>
