@@ -31,21 +31,22 @@ class AuthController extends Controller
 
         $user = User::where('email', $credentials['email'])->first();
 
-        if ($user) {
+        if (!$user) {
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ]);
+        }
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-                return redirect()->intended('/profile'); // Redirect to the profile page
+            return redirect()->intended('/profile');
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'password' => 'The provided credentials do not match our records.',
         ]);
-        } else {
-            return back()->withErrors([
-                'email' => 'User does not exist.',
-            ]);
-        }
     }
+
 
 
     // Handle user registration

@@ -17,20 +17,22 @@
   <body style="overflow: hidden; display: flex; justify-content: center; align-items: center;">
     <div class="user-profile">
       <div class="d-flex">
-        <!-- sidebar menu -->
+       <!-- sidebar menu -->
         <div class="sidebar-profile">
           <div class="heading-profile">
-            <img src="/assets/images/About.jpg" alt="" />
-          </div>
-          <div class="menu-sidebar-profile">
-            <a class="list" href="{{ url('/profile') }}">Profile</a>
-            <a class="list" href="#resetpasswordview">Password</a>
-          </div>
-          <a class="btn button-logout" href="{{ url('/login') }}" role="button"
-            >Logout</a
-          >
+          <img src="/assets/images/About.jpg" alt="" />
         </div>
-        <!-- sidebar end -->
+      <div class="menu-sidebar-profile">
+        <a class="list" href="{{ url('/profile') }}">Profile</a>
+        <a class="list" href="#resetpasswordview">Password</a>
+      </div>
+      <form action="{{ route('logout') }}" method="POST">
+    @csrf
+    <button type="submit" class="btn button-logout" role="button">Logout</button>
+  </form>
+</div>
+<!-- sidebar end -->
+
 
         <!-- content page -->
         <div class="content-profile">
@@ -44,7 +46,9 @@
                   <div class="col-md-4">
                     <label for="validationServer01" class="form-label"
                       >First name</label
+                      
                     >
+                    <p></p>
                     <input
                       type="text"
                       class="form-control is-valid"
