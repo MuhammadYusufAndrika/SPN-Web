@@ -12,7 +12,7 @@ class AuthController extends Controller
     // Show the login form
     public function login()
     {
-        return view('auth.login'); // Ensure 'resources/views/login.blade.php' exists
+        return view('auth.login'); // Ensure 'resources/views/auth/login.blade.php' exists
     }
 
     // Show the registration form
@@ -29,38 +29,30 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
-        $user = User::where('email', $credentials['email'])->first();
-
-        if (!$user) {
-            return back()->withErrors([
-                'email' => 'The provided credentials do not match our records.',
-            ]);
-        }
-
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/profile');
         }
 
         return back()->withErrors([
-            'password' => 'The provided credentials do not match our records.',
+            'email' => 'Email atau Password tidak sesuai',
         ]);
     }
-
-
 
     // Handle user registration
     public function store(Request $request)
     {
-        $validate = $request->validate([
+        $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|unique:users,email',
             'password' => 'required',
             'confirm-password' => 'required|same:password'
         ]);
-        $data = $request->except('confirm-password', 'password');
+
+        $data = $request->except('confirm-password');
         $data['password'] = Hash::make($request->password);
         User::create($data);
+        
         return redirect('/login');
     }
 
@@ -70,6 +62,7 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+        
         return redirect('/login');
     }
 }

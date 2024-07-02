@@ -66,6 +66,11 @@
         .register-link a {
             color: #4c75fc;
         }
+        .alert {
+            border-radius: 25px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -73,6 +78,13 @@
         <div class="login-form">
             <h2>Hello, Welcome Back</h2>
             <p>Hey, welcome back to SPN</p>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                    @endforeach
+                </div>
+            @endif
             <form action="{{ route('auth.authenticate') }}" method="POST">
                 @csrf
                 <div class="form-group">
@@ -85,7 +97,6 @@
                     <input type="checkbox" class="form-check-input" name="remember" id="remember">
                     <label class="form-check-label" for="remember">Remember me</label>
                 </div>
-               
                 <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                 <div class="register-link">
                     Don't have an account? <a href="{{ route('auth.register') }}">Sign up</a>
