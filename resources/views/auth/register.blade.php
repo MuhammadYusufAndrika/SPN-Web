@@ -1,128 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.87.0">
-    <title>Register Template · Bootstrap v5.1</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
-
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-      html,
-      body {
-        height: 100%;
-        background-color: #f8f9fa;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .form-signin {
-        max-width: 380px;
-        padding: 2rem;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
-
-      .form-signin .form-floating:focus-within {
-        z-index: 2;
-      }
-
-      .form-signin input[type="email"],
-      .form-signin input[type="text"],
-      .form-signin input[type="password"] {
-        margin-bottom: 1rem;
-      }
-
-      .form-signin button {
-        background-color: #007bff;
-        border: none;
-      }
-
-      .form-signin button:hover {
-        background-color: #0056b3;
-      }
-
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        body {
+          
+            font-family: 'Nunito', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-      }
+        .container {
+            max-width: 900px;
+            display: flex;
+            flex-direction: row;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .register-form {
+            padding: 40px;
+            flex: 1;
+        }
+        .welcome-message {
+            color: #fff;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 40px;
+        }
+        .welcome-message img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        .form-group input {
+            height: 50px;
+            border-radius: 25px;
+            padding-left: 20px;
+        }
+        .btn-primary {
+            border-radius: 25px;
+            padding: 10px 20px;
+            background: #4c75fc;
+            border: none;
+        }
+        .btn-primary:hover {
+            background: #77a6e3;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .login-link a {
+            color: #4c75fc;
+        }
     </style>
-
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('/css/signin.css') }}" rel="stylesheet">
-  </head>
-  <body class="text-center">
-    
-    <main class="form-signin">
-      <form action="{{ route('auth.register') }}" method="POST">
-        @csrf
-        <img class="mb-4" src="{{ asset('img/bootstrap-logo.svg') }}" alt="" width="72" height="57">
-        <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
-
-        <div class="form-floating">
-          <input type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" name="email" placeholder="name@example.com">
-          <label for="email">Email address</label>
-          @error('email')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div>
-          @enderror
+</head>
+<body>
+    <div class="container">
+        <div class="register-form">
+            <h2>Create Account</h2>
+            <form action="{{ route('auth.store') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="confirm-password" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                <div class="login-link">
+                    Already have an account? <a href="{{ route('login') }}">Log in</a>
+                </div>
+            </form>
         </div>
-        <div class="form-floating">
-          <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" id="name" name="name" placeholder="your name">
-          <label for="name">Your Name</label>
-          @error('name')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div>
-          @enderror
+        <div class="welcome-message">
+            <img src="/assets/images/banner.jpg" alt="Welcome Image">
         </div>
-        <div class="form-floating">
-          <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Password">
-          <label for="password">Password</label>
-          @error('password')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div>
-          @enderror
-        </div>
-        <div class="form-floating">
-          <input type="password" class="form-control @error('confirm-password') is-invalid @enderror" name="confirm-password" id="confirm-password" placeholder="confirm-password">
-          <label for="confirm-password">Confirm Password</label>
-          @error('confirm-password')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div>
-          @enderror
-        </div>
-
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
-      </form>
-    </main>
-
-  </body>
+    </div>
+</body>
 </html>
