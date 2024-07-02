@@ -100,31 +100,38 @@
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Dashboard Admin</h1>
                 </div>
-
-                <div class="row">
+                
+                {{-- <div class="row">
                     <div class="col-md-4">
-                        <div class="card text-white bg-primary mb-3">
-                            <div class="card-header">Total Carousels</div>
-                            <div class="card-body">
-                                {{-- <h5 class="card-title">10</h5> --}}
-                                <p class="card-text">Manage all carousels from here.</p>
+
+                        <a href="{{ route('admin.carousels.index') }}">
+                            <div class="card text-white bg-primary mb-3">
+                                <div class="card-header text-light">Total Carousels</div>
+                                <div class="card-body">
+                                 
+                                    <a href="{{ route('admin.carousels.index') }}">
+                                        <p class="card-text text-light">Manage all carousels from here.</p>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-md-4">
-                        <div class="card text-white bg-success mb-3">
-                            <div class="card-header">Total Descriptions</div>
-                            <div class="card-body">
-                                {{-- <h5 class="card-title">20</h5> --}}
-                                <p class="card-text">Manage all descriptions from here.</p>
-                            </div>
-                        </div>
+                        <a href="">
+                            <div class="card text-white bg-success mb-3">
+                                <div class="card-header">Total Descriptions</div>
+                                <div class="card-body">
+                                   
+                                    <p class="card-text">Manage all descriptions from here.</p>
+                                </div>
+                            </div> 
+                        </a>
                     </div>
                     <div class="col-md-4">
                         <div class="card text-white bg-warning mb-3">
                             <div class="card-header">Total Services</div>
                             <div class="card-body">
-                                {{-- <h5 class="card-title">15</h5> --}}
+                                
                                 <p class="card-text">Manage all services from here.</p>
                             </div>
                         </div>
@@ -155,13 +162,13 @@
                                             <td>Added new service</td>
                                             <td>2024-06-22</td>
                                         </tr>
-                                        <!-- Add more rows as needed -->
+                                        
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 @yield('content')
             </main>
@@ -175,5 +182,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
 </script>
+<script type="text/javascript">
 
+</script>
 </html>
