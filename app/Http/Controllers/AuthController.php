@@ -31,6 +31,12 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+
+            //user role check
+            $user = Auth::user();
+            if ($user->usertype === 'admin') {
+                return redirect('/admin');
+            }
             return redirect()->intended('/profile');
         }
 

@@ -51,30 +51,39 @@ Route::get("/index", function(){
     return view('index', compact('firstDescription' , 'carousels' , 'services'));
 });
 
-Route::prefix('admin')->name('admin.')->group(function () {
-    // Rute untuk tampilan admin.blade.php
-    Route::get('/', [AdminController::class, 'index'])->name('dashboard');
-    // Rute yang sudah ada
-    Route::resource('carousels', CarouselController::class);
-    Route::resource('descriptions', DescriptionController::class);
-    Route::resource('services', ServiceController::class);
-    Route::resource('layanancctv', LayananCCTVController::class);
-    Route::resource('layananinternet', LayananInternetController::class);
-    Route::resource('layanankomputer', LayananKomputerController::class);
-    Route::resource('contact', PengaduanController::class);
-    Route::resource('about', AboutController::class);
+// Route admin
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('admin')->name('admin.')->group(function () {
+        // Rute untuk tampilan admin.blade.php
+        Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+        // Rute yang sudah ada
+        Route::resource('carousels', CarouselController::class);
+        Route::resource('descriptions', DescriptionController::class);
+        Route::resource('services', ServiceController::class);
+        Route::resource('layanancctv', LayananCCTVController::class);
+        Route::resource('layananinternet', LayananInternetController::class);
+        Route::resource('layanankomputer', LayananKomputerController::class);
+    });
 });
 
-// Route::prefix('admin')->name('admin.')->group(function () {
-//     Route::resource('carousels', CarouselController::class);
-//     Route::resource('descriptions', DescriptionController::class);
-//     Route::resource('services', ServiceController::class);
-//     Route::resource('layanan-internet', LayananInternetController::class);
-// });
+Route::resource('about', AboutController::class)->names([
+    'index' => 'admin.about.index',
+    'create' => 'admin.about.create',
+    'store' => 'admin.about.store',
+    'show' => 'admin.about.show',
+    'edit' => 'admin.about.edit',
+    'update' => 'admin.about.update',
+    'destroy' => 'admin.about.destroy',
+]);
+
 
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
+
+Route::get('/index', function () {
+    return view('index');
+})->name('index');
 
 Route::get('/contact', function () {
     return view('contact');
