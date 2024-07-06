@@ -28,21 +28,20 @@ class AuthController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-
+    
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
-            //user role check
+    
+            // Mendapatkan informasi pengguna
             $user = Auth::user();
-            if ($user->usertype === 'admin') {
+
+            // Cek tipe pengguna dan arahkan ke halaman yang sesuai
+            if ($user->usertype == 'admin') {
                 return redirect('/admin');
             }
+    
             return redirect()->intended('/profile');
         }
-
-        return back()->withErrors([
-            'email' => 'Email atau Password tidak sesuai',
-        ]);
     }
 
     // Handle user registration

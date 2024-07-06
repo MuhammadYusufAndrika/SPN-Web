@@ -58,6 +58,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('dashboard');
         // Rute yang sudah ada
         Route::resource('carousels', CarouselController::class);
+        Route::resource('about', AboutController::class);
+        Route::resource('contact', PengaduanController::class);
         Route::resource('descriptions', DescriptionController::class);
         Route::resource('services', ServiceController::class);
         Route::resource('layanancctv', LayananCCTVController::class);
@@ -80,10 +82,6 @@ Route::resource('about', AboutController::class)->names([
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
-
-Route::get('/index', function () {
-    return view('index');
-})->name('index');
 
 Route::get('/contact', function () {
     return view('contact');
