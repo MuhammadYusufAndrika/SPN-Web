@@ -93,7 +93,11 @@
                               <h5 class="card-title">{{ $section->title }}</h5>
                               <p class="card-text">{{ $section->description }}</p>
                               <p class="card-text">{{ $section->price }}</p>
-                              <button type="button" class="btn btn-primary">Beli Paket</button>
+                              <a href="https://api.whatsapp.com/send/?phone=%2B6285669812501&text&type=phone_number&app_absent=0">
+                                <button type="button" class="btn btn-primary">
+                                    Beli Paket
+                                </button>
+                            </a>
                           </div>
                       </div>
                   @endif
