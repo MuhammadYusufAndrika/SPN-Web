@@ -30,7 +30,7 @@ class LayananCCTVController extends Controller
             'title' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'price' => 'nullable|numeric',
+            'price' => 'nullable|string',
         ]);
 
         if ($request->hasFile('image')) {
@@ -57,7 +57,7 @@ class LayananCCTVController extends Controller
             'title' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'price' => 'nullable|numeric',
+            'price' => 'nullable|string',
         ]);
 
         if ($request->hasFile('image')) {

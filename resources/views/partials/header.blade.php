@@ -49,7 +49,19 @@
                                     </li>
                                     <li><a class="dropdown-item" href="{{ route('cctvlayanan') }}">CCTV</a></li>
                                 </ul>
-                            </li>
+                            {{-- </li><li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">Layanan</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('internetlayanan') }}">Internet</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('komputerlayanan') }}">Jaringan Komputer</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('cctvlayanan') }}">CCTV</a></li>
+                                </ul>
+                            </li> --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('about') }}">About</a>
                             </li>
