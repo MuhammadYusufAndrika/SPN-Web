@@ -22,7 +22,7 @@ class AuthController extends Controller
     }
 
     // Handle login request
-    public function authenticate(Request $request)
+   public function authenticate(Request $request)
     {
         $credentials = $request->validate([
             'email' => ['required', 'email'],
@@ -40,8 +40,14 @@ class AuthController extends Controller
                 return redirect('/admin');
             }
     
+            // Arahkan pengguna biasa ke profil
             return redirect()->intended('/profile');
         }
+
+        // Login gagal, kembali ke halaman login dengan pesan kesalahan
+        return back()->withErrors([
+            'email' => 'Email atau password salah.',
+        ])->withInput();
     }
 
     // Handle user registration
@@ -58,7 +64,7 @@ class AuthController extends Controller
         $data['password'] = Hash::make($request->password);
         User::create($data);
         
-        return redirect('/login');
+        return redirect('/login');  
     }
 
     // Handle logout request

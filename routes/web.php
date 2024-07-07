@@ -21,6 +21,17 @@ use App\Models\LayananInternet;
 use App\Models\LayananKomputer;
 use App\Models\Pengaduan;
 
+    // Route::middleware(['auth'])->group(function () {
+    //     Route::get('/profile', function () {
+    //         return view('profile');
+    //     })->name('profile');
+
+    //     Route::prefix('admin')->middleware('auth')->group(function () {
+    //         Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
+    //         // Rute admin lainnya
+    //     });
+    // });
+
 //autentikasi
 Route::get('/', function () {
     return view('welcome');
@@ -77,6 +88,19 @@ Route::resource('about', AboutController::class)->names([
     'update' => 'admin.about.update',
     'destroy' => 'admin.about.destroy',
 ]);
+
+
+Route::middleware(['auth'])->group(function () {
+    // Halaman utama untuk pengguna biasa
+    Route::get('/', [IndexController::class, 'index'])->name('home');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', function () {
+        return view('profile');
+    })->name('profile');
+});
+
 
 
 Route::get('/profile', function () {
