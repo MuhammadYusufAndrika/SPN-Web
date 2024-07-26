@@ -32,7 +32,6 @@
 </div>
 <!-- sidebar end -->
 
-
         <!-- content page -->
         <div class="content-profile" style="padding: 20px;">
           <div class="container-page-fluid" style="max-width: 100%;">
@@ -40,14 +39,28 @@
                   <p class="fw-bold">Profile Menu</p>
               </div>
               <div class="content-profile-form" style=" border: 1px solid #ddd;padding: 20px;border-radius: 5px;">
-                  <form class="row g-3">
-                      <div class="col-md-12">
-                          <label for="validationServer01" class="form-label">First name</label>
-                          <input type="text" class="form-control is-valid" id="validationServer01" value="{{ $user->name }}" required>
-                          <div class="valid-feedback">Looks good!</div>
-                      </div>
-                      <!-- Add other form fields here -->
-                  </form>
+
+                <form class="row g-3" method="POST" action="{{ url('/update-profil') }}">
+                  @csrf
+                  <div class="col-md-12">
+                      <label for="name" class="form-label">Username</label>
+                      <input type="text" class="form-control is-valid" id="name" name="name" value="{{ $user->name }}" required>
+                  </div>
+                  <div class="col-md-12">
+                    <label for="validationServer01" class="form-label">Email</label>
+                    <input type="text" class="form-control is-valid" id="validationServer01" name="email" value="{{ $user->email }}" required>
+                </div>
+                  <div class="col-md-12">
+                    <label for="validationServer01" class="form-label">Password</label>
+                    <input type="text" class="form-control" id="validationServer01" name="password" required>
+                </div>
+                  <div class="col-md-12">
+                      <label for="validationServer01" class="form-label">Confirm Password</label>
+                      <input type="text" class="form-control" id="validationServer01" name="password" required>
+                      <button class="btn btn-primary mt-1" type="submit">Reset</button>
+                  </div>
+                  <!-- Add other form fields here if needed -->
+
               </div>
           </div>
       </div>

@@ -107,6 +107,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::get('/profile', [ProfileController::class, 'showProfileForm'])->name('profile')->middleware('auth');
+Route::post('/update-profil', [ProfileController::class, 'updateProfil'])->name('update-profil')->middleware('auth');
 
 Route::get('/contact', function () {
     return view('contact');
