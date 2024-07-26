@@ -24,217 +24,33 @@
         </div>
       <div class="menu-sidebar-profile">
         <a class="list" href="{{ url('/profile') }}">Profile</a>
-        <a class="list" href="#resetpasswordview">Password</a>
+        <form action="{{ route('logout') }}" method="POST">
+          <button type="submit" class="btn button-logout" role="button">Logout</button>
       </div>
-      <form action="{{ route('logout') }}" method="POST">
     @csrf
-    <button type="submit" class="btn button-logout" role="button">Logout</button>
   </form>
 </div>
 <!-- sidebar end -->
 
 
         <!-- content page -->
-        <div class="content-profile">
-          <div class="section-page">
-            <div class="container-page-fluid">
+        <div class="content-profile" style="padding: 20px;">
+          <div class="container-page-fluid" style="max-width: 100%;">
               <div class="heading-content-profile">
-                <p style="display: flex; font-weight: 700">profile Menu</p>
+                  <p class="fw-bold">Profile Menu</p>
               </div>
-              <div class="content-profile-form">
-                <form class="row g-3">
-                  <div class="col-md-4">
-                    <label for="validationServer01" class="form-label"
-                      >First name</label
-                      
-                    >
-                    <p></p>
-                    <input
-                      type="text"
-                      class="form-control is-valid"
-                      id="validationServer01"
-                      value="Mark"
-                      required
-                    />
-                    <div class="valid-feedback">Looks good!</div>
-                  </div>
-                  <div class="col-md-4">
-                    <label for="validationServer02" class="form-label"
-                      >Last name</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control is-valid"
-                      id="validationServer02"
-                      value="Otto"
-                      required
-                    />
-                    <div class="valid-feedback">Looks good!</div>
-                  </div>
-                  <div class="col-md-4">
-                    <label for="validationServerUsername" class="form-label"
-                      >Username</label
-                    >
-                    <div class="input-group has-validation">
-                      <span class="input-group-text" id="inputGroupPrepend3"
-                        >@</span
-                      >
-                      <input
-                        type="text"
-                        class="form-control is-invalid"
-                        id="validationServerUsername"
-                        aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
-                        required
-                      />
-                      <div
-                        id="validationServerUsernameFeedback"
-                        class="invalid-feedback"
-                      >
-                        Please choose a username.
+              <div class="content-profile-form" style=" border: 1px solid #ddd;padding: 20px;border-radius: 5px;">
+                  <form class="row g-3">
+                      <div class="col-md-12">
+                          <label for="validationServer01" class="form-label">First name</label>
+                          <input type="text" class="form-control is-valid" id="validationServer01" value="{{ $user->name }}" required>
+                          <div class="valid-feedback">Looks good!</div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="validationServer03" class="form-label"
-                      >City</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control is-invalid"
-                      id="validationServer03"
-                      aria-describedby="validationServer03Feedback"
-                      required
-                    />
-                    <div
-                      id="validationServer03Feedback"
-                      class="invalid-feedback"
-                    >
-                      Please provide a valid city.
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <label for="validationServer04" class="form-label"
-                      >State</label
-                    >
-                    <select
-                      class="form-select is-invalid"
-                      id="validationServer04"
-                      aria-describedby="validationServer04Feedback"
-                      required
-                    >
-                      <option selected disabled value="">Choose...</option>
-                      <option>...</option>
-                    </select>
-                    <div
-                      id="validationServer04Feedback"
-                      class="invalid-feedback"
-                    >
-                      Please select a valid state.
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <label for="validationServer05" class="form-label"
-                      >Zip</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control is-invalid"
-                      id="validationServer05"
-                      aria-describedby="validationServer05Feedback"
-                      required
-                    />
-                    <div
-                      id="validationServer05Feedback"
-                      class="invalid-feedback"
-                    >
-                      Please provide a valid zip.
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input is-invalid"
-                        type="checkbox"
-                        value=""
-                        id="invalidCheck3"
-                        aria-describedby="invalidCheck3Feedback"
-                        required
-                      />
-                      <label class="form-check-label" for="invalidCheck3">
-                        Agree to terms and conditions
-                      </label>
-                      <div id="invalidCheck3Feedback" class="invalid-feedback">
-                        You must agree before submitting.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <button class="btn btn-primary" type="submit">
-                      Submit
-                    </button>
-                  </div>
-                </form>
+                      <!-- Add other form fields here -->
+                  </form>
               </div>
-              <p
-                class="resetpassword"
-                style="display: flex; font-weight: 700; margin-top: 350px"
-              >
-                Reset Password
-              </p>
-              <div class="mb-3 row">
-                <label for="staticEmail" class="col-sm-2 col-form-label"
-                  >Email</label
-                >
-                <div class="col-sm-10">
-                  <input
-                    type="text"
-                    readonly
-                    class="form-control-plaintext"
-                    id="staticEmail"
-                    value="email@example.com"
-                  />
-                </div>
-              </div>
-              <div class="mb-3 row">
-                <label for="inputPassword" class="col-sm-2 col-form-label"
-                  >Password</label
-                >
-                <div class="col-sm-10">
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="inputPassword"
-                  />
-                </div>
-              </div>
-              <div class="mb-3 row">
-                <label for="inputPassword" class="col-sm-2 col-form-label"
-                  >New Password</label
-                >
-                <div class="col-sm-10">
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="inputPassword"
-                  />
-                </div>
-              </div>
-              <div class="mb-3 row">
-                <label for="inputPassword" class="col-sm-2 col-form-label"
-                  >Retype Password</label
-                >
-                <div class="col-sm-10">
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="inputPassword"
-                  />
-                </div>
-              </div>
-              <button class="btn btn-primary" type="submit">Send</button>
-            </div>
           </div>
-        </div>
+      </div>
         <!-- content end -->
       </div>
     </div>

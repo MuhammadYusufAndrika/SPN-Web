@@ -19,23 +19,26 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthController;
 use App\Models\LayananInternet;
 use App\Models\LayananKomputer;
+use App\Http\Controllers\ProfileController;
 use App\Models\Pengaduan;
 
-    // Route::middleware(['auth'])->group(function () {
-    //     Route::get('/profile', function () {
-    //         return view('profile');
-    //     })->name('profile');
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/profile', function () {
+//         return view('profile');
+//     })->name('profile');
 
-    //     Route::prefix('admin')->middleware('auth')->group(function () {
-    //         Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
-    //         // Rute admin lainnya
-    //     });
-    // });
+//     Route::prefix('admin')->middleware('auth')->group(function () {
+//         Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
+//         // Rute admin lainnya
+//     });
+// });
 
+
+Route::get('/', [IndexController::class, 'index'])->name('home');
 //autentikasi
-Route::get('/', function () {
-    return view('welcome');
-})->middleware('auth');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->middleware('auth');
 
 // Login
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -55,11 +58,11 @@ Route::post('/logout', function () {
 
 
 Route::get('/', [IndexController::class, 'index']);
-Route::get("/index", function(){
+Route::get("/index", function () {
     $firstDescription = Description::first();
     $carousels = Carousel::all();
     $services = Service::all();
-    return view('index', compact('firstDescription' , 'carousels' , 'services'));
+    return view('index', compact('firstDescription', 'carousels', 'services'));
 });
 
 // Route admin
@@ -103,9 +106,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-Route::get('/profile', function () {
-    return view('profile');
-})->name('profile');
+Route::get('/profile', [ProfileController::class, 'showProfileForm'])->name('profile')->middleware('auth');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -114,7 +115,7 @@ Route::get('/contact', function () {
 Route::get('/cctvlayanan', function () {
     $sections = LayananCCTV::all();
     $carousels = Carousel::all();
-    return view('cctvlayanan', compact('sections','carousels'));
+    return view('cctvlayanan', compact('sections', 'carousels'));
 })->name('cctvlayanan');
 
 Route::get('/about', function () {
@@ -127,13 +128,13 @@ Route::get('/about', function () {
 Route::get('/komputerlayanan', function () {
     $sections = LayananKomputer::all();
     $carousels = Carousel::all();
-    return view('komputerlayanan', compact('sections','carousels'));
+    return view('komputerlayanan', compact('sections', 'carousels'));
 })->name('komputerlayanan');
 
 Route::get('/internetlayanan', function () {
     $sections = LayananInternet::all();
     $carousels = Carousel::all();
-    return view('internetlayanan', compact('sections','carousels'));
+    return view('internetlayanan', compact('sections', 'carousels'));
 })->name('internetlayanan');
 
 Route::post('create-contact', [PengaduanController::class, "store"]);
