@@ -1,217 +1,229 @@
-<!-- Ini aku yang ngerjain (Rehan) -->
-@include('partials.header')
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact SPN - Surya Prima Net</title>
-    <link rel="shortcut icon" href="/assets/images/SPN.png" type="image/x-icon" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="sass/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    <script src="https://unpkg.com/feather-icons"></script>
+    <meta name="viewport" conte    </style>
 </head>
 <body>
-  <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/6666c6ec981b6c56477b7f0a/1i00ni3l6';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-        })();
-  </script>
-<!-- carousel start -->
-
-      <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner position-relative" style="width: 100%; height: 75vh">
-          <div class="carousel-item active">
-            <img src="assets/images/carousel-1 (1).jpg" class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block " style="height: 60%;">
-              <h1 style="font-weight: 700;">Membawa Dunia Menjadi Lebih Dekat</h1>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/carousel-2.jpg" class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block " style="height: 60%;">
-              <h1 style="font-weight: 700;">Membawa Dunia Menjadi Lebih Dekat</h1>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/carousel-3.jpg" class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block " style="height: 60%;">
-              <h1 style="font-weight: 700;">Membawa Dunia Menjadi Lebih Dekat</h1>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-<!-- carousel end -->
-
-    <div class="judul">
-      <h2>
-        <span class="kantor">Kantor</span> 
-        <span class="kami">Kami</span>
-      </h2>
-    </div>
-  <section class="peta">
-    <!-- <div class="card w-50 p-3" > -->
-      <div class="ratio ratio-4x3">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d986.4952580892519!2d116.66311432851101!3d-8.501221973099224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcc393b29ac144d%3A0xb0622dfdcbe4238f!2sJSN%20-%20Kantor%20Layanan%20Labuhan%20Lombok!5e0!3m2!1sid!2sid!4v1715173013393!5m2!1sid!2sid" frameborder="0" style="border:0" allowfullscreen></iframe>
-      <!-- </div> -->
-    </div> 
-      <div class="reportbox col-md-6">
-        <h2 class="reporttext text-uppercase mt-3 font-weight-bold text-black">Pengaduan Masalah</h2>
-        <form action="{{ url('create-contact') }}" method="POST" >
-            @csrf
-
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="form-group">
-                <input type="text" name="nama" class="form-control mt-2" placeholder="Nama" required>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="form-group">
-                <input type="text" name="email" class="form-control mt-2" placeholder="Email" required>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="form-group">
-                <input type="text" name="alamat" class="form-control mt-2" placeholder="Alamat" required>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="form-group">
-                <input type="text" name="no_hp" class="form-control mt-2" placeholder="No. HP" required>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="form-group">
-                <textarea name="deskripsi_keluhan" class="form-control mt-2" id="exampleFormControlTextarea1" placeholder="Deskribsi Keluhan" rows="3" required></textarea>
-              </div>
-            </div>
-            <div class="col-12">
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                <label class="form-check-label" for="invalidCheck2" style="color: black; font-weight: 100;">
-                  Saya dapat memastikan bahwa data di atas benar
-                </label>
-              </div>
-            </div>
-            </div>
-            <div class=" tombolkirim col-12">
-              <button class="btn btn-light" type="submit">Kirim</button>
-            </div>
-          </div>
-          </form>
-          <div class="textinfo text-black">
-              <h2 class="text-uppercase mt-4 font-weight-bold">Admin Kami</h2>
-              <i class="fas fa-phone mt-3"></i> 082144299555<br>
-              <i class="fa fa-envelope mt-3"></i> <a href="">azka@gmail.com</a><br>
-              <i class="fas fa-globe mt-3"></i> Jln. Raya Labuan Lombok<br>
-
-            </div>
-      </div>
+  <section>
+    @include('partials.header')
   </section>
+    <title>Kontak | Surya Prima Net</title>
+    <link rel="shortcut icon" href="/assets/images/SPN.png" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            padding-top: 70px;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
 
-  <div class="penutup">
-    <footer class="text-center text-lg-start text-dark" style="background-color:rgba(0, 0, 0, 0.2)">
-      <!-- Section: Social media -->
-      <section class="d-flex justify-content-between p-4 text-white" style="background-color: #3259ab; height: 80px;">
-        <!-- Left -->
+        .navbar-custom {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
 
-        <!-- Left -->
+        .header-section {
+            background-color: #0d6efd;
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            position: relative;
+            margin-top: 0;
+        }
+        
+        .header-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background-color: white;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+        
+        .map-container {
+            height: 100%;
+            min-height: 350px;
+        }
+        
+        .contact-form {
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info i {
+            width: 25px;
+            color: #0d6efd;
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-section {
+                padding: 2rem 0;
+            }
+            body {
+                padding-top: 80px;
+            }
+        }
 
-        <!-- Right -->
-        <!-- Right -->
-      </section>
-      <!-- Section: Social media -->
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            padding: 10px 25px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
 
-      <!-- Section: Links  -->
-      <section class="" style="height: 300px;">
-        <div class="container text-center text-md-start mt-5" style="height: 200px;">
-          <!-- Grid row -->
-          <div class="row mt-3">
-            <!-- Grid column -->
-            <div class="bebas col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-              <!-- Content -->
-              <h6 class="text-uppercase fw-bold" style="margin-top: 0%;">Surya Prima Net</h6>
-              <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px" />
-              <p>Kami tau anda pasti membutuhkan layanan yang kami sediakan, maka dari itu kamu menyediakan layanan yang
-                cocok buat anda</p>
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            transform: translateY(-2px);
+        }
+
+        .contact-info i {
+            color: #0d6efd;
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header-section {
+                padding: 30px 0;
+            }
+            body {
+                padding-top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+  @include('partials.header')
+
+    <!-- Header Section -->
+    <section class="header-section">
+      <div class="container text-center">
+        <h2 class="display-5 fw-bold">
+          <span class="text-white">Kantor</span> 
+          <span class="text-warning">Kami</span>
+        </h2>
+      </div>
+    </section>
+  
+    <!-- Main Content Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Map Section -->
+          <div class="col-lg-6">
+            <div class="map-container mb-4 mb-lg-0">
+              <div class="ratio ratio-4x3 rounded overflow-hidden shadow-sm">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d986.4952580892519!2d116.66311432851101!3d-8.501221973099224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcc393b29ac144d%3A0xb0622dfdcbe4238f!2sJSN%20-%20Kantor%20Layanan%20Labuhan%20Lombok!5e0!3m2!1sid!2sid!4v1715173013393!5m2!1sid!2sid" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
             </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-              <!-- Links -->
-              <h6 class="text-uppercase fw-bold">Products</h6>
-              <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px" />
-              <p>
-                <a href="#!" class="text-dark">Internet</a>
-              </p>
-              <p>
-                <a href="#!" class="text-dark">Jaringan komputer</a>
-              </p>
-              <p>
-                <a href="#!" class="text-dark">CCTV</a>
-              </p>
-            </div>
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-              <h6 class="text-uppercase fw-bold">Useful links</h6>
-              <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px" />
-              <p>
-                <a href="#!" class="text-dark">Home</a>
-              </p>
-              <p>
-                <a href="#!" class="text-dark">About</a>
-              </p>
-              <p>
-                <a href="#!" class="text-dark">Contact</a>
-              </p>
-            </div>
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-              <h6 class="text-uppercase fw-bold">Contact</h6>
-              <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px" />
-              <p><i class="fas fa-home mr-3"></i> Jl. Raya Labuhan Lombok</p>
-              <p>
-                <i class="fas fa-envelope mr-3"></i>
-                SuryaPrimaNet@gmail.com
-              </p>
-              <p><i class="fas fa-phone mr-3"></i>08++++++++++</p>
+          </div>
+          
+          <!-- Contact Form Section -->
+          <div class="col-lg-6">
+            <div class="contact-form rounded">
+              <h2 class="h4 mb-4 text-uppercase fw-bold border-bottom border-primary pb-2">Pengaduan Masalah</h2>
+              <form action="{{ url('create-contact') }}" method="POST">
+                @csrf
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" name="nama" class="form-control" placeholder="Nama" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="email" name="email" class="form-control" placeholder="Email" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" name="alamat" class="form-control" placeholder="Alamat" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="tel" name="no_hp" class="form-control" placeholder="No. HP" required>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <textarea name="deskripsi_keluhan" class="form-control" placeholder="Deskripsi Keluhan" rows="4" required></textarea>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                      <label class="form-check-label" for="invalidCheck2">
+                        Saya dapat memastikan bahwa data di atas benar
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary" type="submit">
+                      <i class="fas fa-paper-plane me-2"></i>Kirim
+                    </button>
+                  </div>
+                </div>
+              </form>
+              
+              <div class="mt-5">
+                <h3 class="h5 fw-bold text-uppercase mb-3">Admin Kami</h3>
+                <div class="contact-info">
+                  <p class="mb-2"><i class="fas fa-phone"></i> 082144299555</p>
+                  <p class="mb-2"><i class="fas fa-envelope"></i> <a href="mailto:azka@gmail.com" class="text-decoration-none">azka@gmail.com</a></p>
+                  <p class="mb-0"><i class="fas fa-map-marker-alt"></i> Jln. Raya Labuan Lombok</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2024 Copyright:
-        <a class="text-dark" href="#">SPN - Surya Prima Net</a>
       </div>
-    </div>
+    </section>
+
+  <section>
+    @include('partials.footer')
+  </section>
      
 </body>
-<script> feather.replace();</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    // Live chat script
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6666c6ec981b6c56477b7f0a/1i00ni3l6';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      feather.replace();
+      
+      // Initialize AOS
+      AOS.init();
+      
+      // Add active class to dropdown parent when child is active
+      const dropdownItems = document.querySelectorAll('.dropdown-item');
+      dropdownItems.forEach(item => {
+        if (item.getAttribute('href') === window.location.pathname) {
+          item.closest('.dropdown').querySelector('.dropdown-toggle').classList.add('active');
+        }
+      });
+    });
+  </script>
 </html>

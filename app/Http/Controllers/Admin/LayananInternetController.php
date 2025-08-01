@@ -9,11 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class LayananInternetController extends Controller
 {
-    // Menampilkan semua sections
+    // Menampilkan semua sections (Semua data Layanan Internet)
     public function index()
     {
         $sections = LayananInternet::all();
-        return view('admin.layananinternet.index', compact('sections'));
+        //Mengembalikan view admin.layananinternet.index dengan data sections yang berisi semua data 
+        return view('admin.layananinternet.index', compact('sections')); 
     }
 
     // Menampilkan form untuk membuat section baru
@@ -25,6 +26,7 @@ class LayananInternetController extends Controller
     // Menyimpan section baru ke database
     public function store(Request $request)
     {
+        
         $validatedData = $request->validate([
             'type' => 'required|string|max:255',
             'title' => 'nullable|string|max:255',
@@ -33,13 +35,17 @@ class LayananInternetController extends Controller
             'price' => 'nullable|numeric',
         ]);
 
+        // Mengecek apakah ada file gambar yang diupload.
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('images', 'public');
             $validatedData['image'] = $imagePath;
         }
 
+        // Menyimpan data yang sudah divalidasi ke dalam tabel
+        // Membuat objek baru dari model LayananInternet
         LayananInternet::create($validatedData);
 
+        // Mengarahkan kembali ke halaman index dengan pesan sukses.
         return redirect()->route('admin.layananinternet.index')->with('success', 'Section created successfully.');
     }
 
@@ -68,7 +74,7 @@ class LayananInternetController extends Controller
             }
             $validatedData['image'] = $imagePath;
         }
-
+        
         $layananinternet->update($validatedData);
 
         return redirect()->route('admin.layananinternet.index')->with('success', 'Section updated successfully.');
@@ -83,4 +89,4 @@ class LayananInternetController extends Controller
         $layananinternet->delete();
         return redirect()->route('admin.layananinternet.index')->with('success', 'Section deleted successfully.');
     }
-}
+}   

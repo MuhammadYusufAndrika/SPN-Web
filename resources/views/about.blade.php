@@ -1,19 +1,23 @@
-@include ('partials.header')
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="sass/style.scss" />
   <title>About SPN - Surya Prima Net</title>
   <link rel="shortcut icon" href="/assets/images/SPN.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="sass/style.scss" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous" />
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
+  <section>
+    @include ('partials.header')
+  </section>
   <!-- Carousel About -->
   <section class="">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -102,14 +106,26 @@
   <!-- End Footer -->
 
   <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  <!-- Feather Icons JS -->
-  <script src="https://unpkg.com/feather-icons"></script>
   <!-- Custom JS -->
   <script>
-    feather.replace();
+    document.addEventListener('DOMContentLoaded', function() {
+      feather.replace();
+      
+      // Initialize AOS
+      AOS.init();
+      
+      // Add active class to dropdown parent when child is active
+      const dropdownItems = document.querySelectorAll('.dropdown-item');
+      dropdownItems.forEach(item => {
+        if (item.getAttribute('href') === window.location.pathname) {
+          item.closest('.dropdown').querySelector('.dropdown-toggle').classList.add('active');
+        }
+      });
+    });
   </script>
 </body>
 </html>

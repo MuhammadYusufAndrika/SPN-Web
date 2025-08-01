@@ -25,7 +25,7 @@
       <div class="menu-sidebar-profile">
         <a class="list" href="{{ url('/profile') }}">Profile</a>
         <form action="{{ route('logout') }}" method="POST">
-          <button type="submit" class="btn button-logout" role="button">Logout</button>
+          <button type="submit" class="btn" role="button">Logout</button>
       </div>
     @csrf
   </form>
@@ -38,26 +38,36 @@
               <div class="heading-content-profile">
                   <p class="fw-bold">Profile Menu</p>
               </div>
-              <div class="content-profile-form" style=" border: 1px solid #ddd;padding: 20px;border-radius: 5px;">
+              
+              @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  {{ session('success') }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              @endif
+              
+              <div class="content-profile-form" style="border: 1px solid #ddd;padding: 20px;border-radius: 5px;">
 
                 <form class="row g-3" method="POST" action="{{ url('/update-profil') }}">
                   @csrf
                   <div class="col-md-12">
-                      <label for="name" class="form-label">Username</label>
-                      <input type="text" class="form-control is-valid" id="name" name="name" value="{{ $user->name }}" required>
+                      <label for="username" class="form-label">Username</label>
+                      <input type="text" class="form-control {{ $user->name ? 'is-valid' : '' }}" id="username" name="name" value="{{ $user->name }}" required>
                   </div>
                   <div class="col-md-12">
-                    <label for="validationServer01" class="form-label">Email</label>
-                    <input type="text" class="form-control is-valid" id="validationServer01" name="email" value="{{ $user->email }}" required>
-                </div>
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control {{ $user->email ? 'is-valid' : '' }}" id="email" name="email" value="{{ $user->email }}" required>
+                  </div>
                   <div class="col-md-12">
-                    <label for="validationServer01" class="form-label">Password</label>
-                    <input type="text" class="form-control" id="validationServer01" name="password" required>
-                </div>
+                    <label for="password" class="form-label">Password Baru</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                  </div>
                   <div class="col-md-12">
-                      <label for="validationServer01" class="form-label">Confirm Password</label>
-                      <input type="text" class="form-control" id="validationServer01" name="password" required>
-                      <button class="btn btn-primary mt-1" type="submit">Reset</button>
+                      <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
+                      <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
+                  </div>
+                  <div class="col-12 mt-3">
+                      <button class="btn btn-primary" type="submit">Update Profil</button>
                   </div>
                   <!-- Add other form fields here if needed -->
 

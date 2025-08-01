@@ -17,28 +17,28 @@ class ProfileController extends Controller
         return view('profile', compact('user'));
     }
 
-    public function updateProfil(Request $request){
+    public function updateProfil(Request $request)
+    {
         // Validate the request data
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'password' => 'required|string|max:255',
-            'email' => 'email'
+            'password' => 'required|string|min:6|max:255',
+            'password_confirmation' => 'required|same:password',
+            'email' => 'required|email|max:255'
         ]);
 
         // Get the currently authenticated user
         $user = Auth::user();
         $hashpass = Hash::make($validatedData['password']);
 
-
-        // Update the user's name using Eloquent's update method
+        // Update the user's data using Eloquent's update method
         $user->update([
             'password' => $hashpass,
             'name' => $validatedData['name'],
             'email' => $validatedData['email']
         ]);
 
-        // Optionally, redirect or return a response
-        return redirect()->back()->with('success', 'updated successfully!');
+        // Redirect with success message
+        return redirect()->back()->with('success', 'Profil berhasil diperbarui!');
     }
-
 }

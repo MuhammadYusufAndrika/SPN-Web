@@ -22,16 +22,16 @@ class AuthController extends Controller
     }
 
     // Handle login request
-   public function authenticate(Request $request)
+    public function authenticate(Request $request)
     {
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-    
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-    
+
             // Mendapatkan informasi pengguna
             $user = Auth::user();
 
@@ -39,7 +39,7 @@ class AuthController extends Controller
             if ($user->usertype == 'admin') {
                 return redirect('/admin');
             }
-    
+
             // Arahkan pengguna biasa ke profil
             return redirect()->intended('/profile');
         }
@@ -63,8 +63,8 @@ class AuthController extends Controller
         $data = $request->except('confirm-password');
         $data['password'] = Hash::make($request->password);
         User::create($data);
-        
-        return redirect('/login');  
+
+        return redirect('/login');
     }
 
     // Handle logout request
@@ -73,7 +73,7 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        
+
         return redirect('/login');
     }
 }
